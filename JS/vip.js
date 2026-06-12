@@ -7,19 +7,56 @@ const rightBtn = vipWindow.querySelector(".right-btn");
 const privileges = vipWindow.querySelector(".privileges");
 const privilegesContainers = privileges.querySelectorAll(".privileges-container");
 
+// Load vip data
+let vips;
+
+async function loadVips() {
+  const response = await fetch("data/vips.json");
+  vips = await response.json();
+}
+loadVips();
+let isVipRendered = false;
 // Function
 function openVip() {
   vipOverlay.classList.add("show");
   vipWindow.classList.add("show");
   btnLayer.classList.remove("show");
-  privileges.innerHTML = vipDescriptions;
+  
+  if (!isVipRendered) {
+    renderVip();
+    isVipRendered = true;
+  }
 }
 function closeVip() {
   vipOverlay.classList.remove("show");
   vipWindow.classList.remove("show");
   btnLayer.classList.add("show");
 }
-
+function createPrivilegesHTML(privileges) {
+ return Object.entries(privileges)
+ .map(([name,value]) => {
+  return `
+  <div>
+  <span>${name}</span>
+  <span>${value}</span>
+  </div>
+  `
+ })
+ .join("");
+}
+function renderVip() {
+    let html = "";
+  Object.entries(vips).forEach(([vipId, vip]) => {
+    const privilegesHTML =  createPrivilegesHTML(vip.privileges);
+    html += `
+    <div class="${vip.class}">
+      <h2>${vip.name} (Accumulated activated effects)</h2>
+      <div class="privileges-container">${privilegesHTML}</div>
+    </div>
+    `;
+  });
+  privileges.innerHTML = html;
+}
 // Event Listener
 vipBtn.addEventListener("click", openVip);
 document.addEventListener("click", (e) => {

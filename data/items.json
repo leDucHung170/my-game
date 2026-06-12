@@ -111,7 +111,7 @@
     "rarity": "rare",
     "image": "images/items/level-tie-meat-chest.webp"
   },
- 
+
   "scroll-seal": {
     "name": "Scroll Seal",
     "rarity": "legendary",
@@ -220,7 +220,7 @@
   },
   "orichalcum": {
     "name": "Orichalcum",
-    "rarity":"legendary",
+    "rarity": "legendary",
     "image": "images/items/orichalcum.webp"
   },
   "skill-book": {
@@ -272,5 +272,25 @@
     "name": "Seaweed",
     "rarity": "epic",
     "image": "images/items/seaweed.webp"
+  },
+  "tech-research-boost-privilege": {
+    "name": "Tech Research Boost Privilege",
+    "rarity": "legendary",
+    "image": "images/items/tech-research-boost-privilege.webp"
+  },
+  "training-perk-upgrade": {
+    "name": "Training Perk Upgrade",
+    "rarity": "legendary",
+    "image": "images/items/training-perk-upgrade.webp"
+  },
+  "auto-hatch-queue-pass": {
+    "name": "Auto Hatch Queue Pass",
+    "rarity": "legendary",
+    "image": "images/items/auto-hatch-queue-pass.webp"
+  },
+  "auto-research-queue-privilege": {
+    "name": "Auto Research Queue Privilege",
+    "rarity": "legendary",
+    "image": "images/items/auto-research-queue-privilege.webp"
   }
 }

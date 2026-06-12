@@ -21,6 +21,8 @@ const customWeeklyPassContainer = shopWindow.querySelector(
 const diamondStoreBtn = shopSection.querySelector("#diamond-store");
 const diamondStoreContainer = shopWindow.querySelector(".diamond-store");
 const diamondStoreContent = diamondStoreContainer.querySelector(".container");
+const permanentPrivilegeBtn = shopSection.querySelector("#permanent-privilege");
+const permanentPrivilegeContainer = shopWindow.querySelector(".permanent-privilege");
 
 const allSectionBtns = [
   dailySpecialBtn,
@@ -29,6 +31,7 @@ const allSectionBtns = [
   weeklyPackBtn,
   customWeeklyPassBtn,
   diamondStoreBtn,
+  permanentPrivilegeBtn,
 ];
 const allSectionContainers = [
   dailySpecialContainer,
@@ -37,6 +40,7 @@ const allSectionContainers = [
   weeklyPackContainer,
   customWeeklyPassContainer,
   diamondStoreContainer,
+  permanentPrivilegeContainer,
 ];
 
 // Load Shop data
@@ -52,6 +56,7 @@ async function loadPacks() {
 }
 loadPacks();
 
+let isShopRendered = false;
 // Render
 function createReceiveHTML(receive) {
   return Object.entries(receive)
@@ -75,6 +80,24 @@ function createReceiveHTML(receive) {
   `;
     })
     .join("");
+}
+// Diamond Store
+function renderDiamondStore() {
+  const diamondPacks = Object.entries(packs).filter(
+    ([id,pack]) => pack.category === "diamond-packs"
+  );
+  let html = "";
+  diamondPacks.forEach(([id,pack]) => {
+    const cost = format(pack.cost);
+    html += `
+    <div class="pack" data-pack-id="${id}">
+      <div class="text">${pack.name}</div>
+      <img draggable="false" class="img" src="${pack.image}"/>
+      <div class="buy-btn">${cost}</div>
+      </div>
+      `;
+  });
+  diamondStoreContent.innerHTML = html;
 }
 // Daily Packs
 function renderDailyPacks() {
@@ -123,31 +146,55 @@ function renderValueWeeklyPass() {
 
   const instantlyHTML = createReceiveHTML(pack.receive.instantly);
   const dailyHTML = createReceiveHTML(pack.receive.daily);
+  const cost = format(pack.cost);
+
   const instantlyContainer = document.querySelector(
-    "#value-weekly-pass .instantly .container",
+    ".custom-weekly-pass .pack.silver .instantly .container",
   );
   const dailyContainer = customWeeklyPassContainer.querySelector(
-    "#value-weekly-pass .daily-reward .container",
+    ".custom-weekly-pass .pack.silver .daily-reward .container",
   );
-
+const valueBuyBtn = customWeeklyPassContainer.querySelector(
+  ".custom-weekly-pass .pack.silver .buy-btn",
+);
   instantlyContainer.innerHTML = instantlyHTML;
   dailyContainer.innerHTML = dailyHTML;
+  valueBuyBtn.textContent = cost;
 }
 function renderDeluxeWeeklyPass() {
   const pack = packs["deluxe-weekly-pass"];
 
   const instantlyHTML = createReceiveHTML(pack.receive.instantly);
   const dailyHTML = createReceiveHTML(pack.receive.daily);
+  const cost = format(pack.cost);
 
   const instantlyContainer = customWeeklyPassContainer.querySelector(
-    "#deluxe-weekly-pass .instantly .container",
+    ".custom-weekly-pass .pack.golden .instantly .container",
   );
   const dailyContainer = customWeeklyPassContainer.querySelector(
-    "#deluxe-weekly-pass .daily-reward .container",
+    ".custom-weekly-pass .pack.golden .daily-reward .container",
   );
-
+  const deluxeBuyBtn = customWeeklyPassContainer.querySelector(
+    ".custom-weekly-pass .pack.golden .buy-btn",
+  );
   instantlyContainer.innerHTML = instantlyHTML;
   dailyContainer.innerHTML = dailyHTML;
+  deluxeBuyBtn.textContent = cost;
+}
+function renderPermanentPrivilege() {
+  const pack = packs["permanent-privilege"];
+
+  const getNowHTML = createReceiveHTML(pack.receive["get-now"]);
+  const dailyGiftHTML = createReceiveHTML(pack.receive["daily-gift"]);
+  const cost = format(pack.cost);
+
+  const getNowContainer = permanentPrivilegeContainer.querySelector(".get-now");
+  const dailyGiftContainer = permanentPrivilegeContainer.querySelector(".daily-gift");
+  const buyBtn = permanentPrivilegeContainer.querySelector(".buy-btn");
+
+  getNowContainer.innerHTML += getNowHTML;
+  dailyGiftContainer.innerHTML += dailyGiftHTML;
+  buyBtn.textContent = cost;
 }
 // Drag
 let isDraggingShopSection = false;
@@ -280,18 +327,15 @@ function heroicOffer() {
   heroicOfferContainer.classList.add("show");
 }
 function dailyPacks() {
-  renderDailyPacks();
   dailyPackBtn.classList.add("selected");
   dailyPackContainer.classList.add("show");
 }
 function weeklyPacks() {
-  renderWeeklyPacks();
+
   weeklyPackBtn.classList.add("selected");
   weeklyPackContainer.classList.add("show");
 }
 function customWeeklyPass() {
-  renderValueWeeklyPass();
-  renderDeluxeWeeklyPass();
   customWeeklyPassBtn.classList.add("selected");
   customWeeklyPassContainer.classList.add("show");
 }
@@ -299,8 +343,24 @@ function diamondStore() {
   diamondStoreBtn.classList.add("selected");
   diamondStoreContainer.classList.add("show");
 }
+function permanentPrivilege() {
+  permanentPrivilegeBtn.classList.add("selected");
+  permanentPrivilegeContainer.classList.add("show");
+}
 // EventListener
-shopBtn.addEventListener("click", openShop);
+shopBtn.addEventListener("click", () => {
+  if (!isShopRendered) {
+    renderDailyPacks();
+    renderWeeklyPacks();
+    renderValueWeeklyPass();
+    renderDeluxeWeeklyPass();
+    renderPermanentPrivilege();
+    renderDiamondStore();
+
+    isShopRendered = true;
+  }
+  openShop();
+});
 document.addEventListener("click", (e) => {
   const classes = e.target.classList;
 
@@ -407,5 +467,11 @@ diamondStoreBtn.addEventListener("click", () => {
   unselected();
   setTimeout(() => {
     diamondStore();
+  }, 100);
+});
+permanentPrivilegeBtn.addEventListener("click", () => {
+  unselected();
+  setTimeout(() => {
+    permanentPrivilege();
   }, 100);
 });

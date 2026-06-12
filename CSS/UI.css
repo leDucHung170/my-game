@@ -898,20 +898,4 @@ html, body {
   top: 6px;
 }
 
-/* Media */
-@media (max-width: 1600px) {
-  .game-screen {
-    width: 1600px;
-  }
-}
 
-@media (max-width: 1400px) {
-  .game-screen {
-    width: 1400px;
-  }
-}
-@media (max-width: 430px) {
-  .game-screen {
-    width: 400px;
-  }
-}

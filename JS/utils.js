@@ -27,6 +27,6 @@ document.addEventListener("keydown", (e) => {
     localStorage.clear();
   }
   if (e.key == "b") {
-    console.log(renderValueWeeklyPass());
+    console.log(renderPermanentPrivilege());
   }
 })

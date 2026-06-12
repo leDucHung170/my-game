@@ -1,32 +1,50 @@
 {
   "diamond-x80": {
+    "category": "diamond-packs",
+    "name":"Diamond x80",
+    "image": "images/buttons/shop/diamond-store/pack-1.png",
     "cost": 25000,
     "receive": 80
   },
   "diamond-x400": {
+    "category": "diamond-packs",
+    "name": "Diamond x400",
+    "image": "images/buttons/shop/diamond-store/pack-2.png",
     "cost": 119000,
     "receive": 400
   },
   "diamond-x800": {
+    "category": "diamond-packs",
+    "name": "Diamond x800",
+    "image": "images/buttons/shop/diamond-store/pack-3.png",
     "cost": 229000,
     "receive": 800
   },
   "diamond-x1600": {
+    "category": "diamond-packs",
+    "name": "Diamond x1600",
+    "image": "images/buttons/shop/diamond-store/pack-4.png",
     "cost": 449000,
     "receive": 1600
   },
   "diamond-x4000": {
+    "category": "diamond-packs",
+    "name": "Diamond x4000",
+    "image": "images/buttons/shop/diamond-store/pack-5.png",
     "cost": 1199000,
     "receive": 4000
   },
   "diamond-x8000": {
+    "category": "diamond-packs",
+    "name": "Diamond x8000",
+    "image": "images/buttons/shop/diamond-store/pack-6.png",
     "cost": 2399000,
     "receive": 8000
   },
   "d-meteoric-iron-core": {
     "category": "daily",
     "name": "Meteoric Iron Core Pack",
-    "image": "images/buttons/shop/meteoric-pack-img",
+    "image": "images/buttons/shop/meteoric-pack-img.png",
     "cost": 119000,
     "receive": {
       "diamond": 400,
@@ -233,7 +251,7 @@
     }
   },
   "w-arcane-source-stone": {
-    "category":"weekly",
+    "category": "weekly",
     "name": "Arcane Source Stone Pack",
     "image": "images/buttons/shop/arcane-source-stone-pack-img.png",
     "availability": 2,
@@ -257,7 +275,7 @@
     }
   },
   "w-scroll-seal": {
-    "category":"weekly",
+    "category": "weekly",
     "name": "Scroll Seal Pack",
     "image": "images/buttons/shop/scroll-seal-pack-img.png",
     "availability": 5,
@@ -298,7 +316,7 @@
     }
   },
   "w-dragon-crystal-dust": {
-    "category":"weekly",
+    "category": "weekly",
     "name": "Dragon Crustal Dust Pack",
     "image": "images/buttons/shop/dragon-dust-pack-img.png",
     "availability": 5,
@@ -452,7 +470,7 @@
     }
   },
   "w-universal-shard": {
-    "category":"weekly",
+    "category": "weekly",
     "name": "Universal Shard Pack",
     "image": "images/buttons/shop/universal-shard-pack-img.png",
     "availability": 2,
@@ -478,7 +496,7 @@
     }
   },
   "w-serverwide-broadcast": {
-    "category":"weekly",
+    "category": "weekly",
     "name": "Server-wide Broadcast Pack",
     "image": "images/buttons/shop/server-wide-broadcast-pack-img.png",
     "availability": 2,
@@ -492,7 +510,7 @@
   "value-weekly-pass": {
     "category": "weekly-pass",
     "name": "Value Weekly Pass",
-  
+
     "cost": 119000,
     "receive": {
       "instantly": {
@@ -521,6 +539,26 @@
         "seaweed": 200,
         "dragon-essence": 14,
         "legendary-universal-hero-shard": 3
+      }
+    }
+  },
+  "permanent-privilege": {
+    "category": "permanent-privilege",
+    "name": "Permanent Privilege",
+    "cost": 299000,
+    "receive": {
+      "get-now": {
+        "diamond": 800,
+        "tech-research-boost-privilege": 1,
+        "training-perk-upgrade": 1,
+        "auto-hatch-queue-pass": 1,
+        "auto-research-queue-privilege": 1
+      },
+      "daily-gift": {
+        "diamond": 50,
+        "gear-enhance-rune": 100,
+        "magic-stone": 5000,
+        "universal-speedup-5m": 20
       }
     }
   }
