@@ -1,0 +1,527 @@
+{
+  "diamond-x80": {
+    "cost": 25000,
+    "receive": 80
+  },
+  "diamond-x400": {
+    "cost": 119000,
+    "receive": 400
+  },
+  "diamond-x800": {
+    "cost": 229000,
+    "receive": 800
+  },
+  "diamond-x1600": {
+    "cost": 449000,
+    "receive": 1600
+  },
+  "diamond-x4000": {
+    "cost": 1199000,
+    "receive": 4000
+  },
+  "diamond-x8000": {
+    "cost": 2399000,
+    "receive": 8000
+  },
+  "d-meteoric-iron-core": {
+    "category": "daily",
+    "name": "Meteoric Iron Core Pack",
+    "image": "images/buttons/shop/meteoric-pack-img",
+    "cost": 119000,
+    "receive": {
+      "diamond": 400,
+      "recharge-exp": 5,
+      "meteoric-iron-core": 10,
+      "legendary-level-tie-ruby-chest": 2,
+      "vip-points": 30
+    }
+  },
+  "d-scroll-seal": {
+    "category": "daily",
+    "name": "Scroll Seal Pack",
+    "image": "images/buttons/shop/scroll-seal-pack-img.png",
+    "cost": 119000,
+    "receive": {
+      "diamond": 400,
+      "recharge-exp": 5,
+      "scroll-seal": 10,
+      "league-magicite": 6000,
+      "horde-magicite": 6000,
+      "nature-magicite": 6000,
+      "vip-points": 30
+    }
+  },
+  "d-behemoth-growth": {
+    "category": "daily",
+    "name": "Behemoth Growth Pack",
+    "image": "images/buttons/shop/behemoth-growth-pack-img.png",
+    "cost": 119000,
+    "receive": {
+      "diamond": 400,
+      "recharge-exp": 5,
+      "magic-core": 500,
+      "league-magicite": 6000,
+      "horde-magicite": 6000,
+      "nature-magicite": 6000,
+      "vip-points": 30
+    }
+  },
+  "d-dragon-crystal-dust": {
+    "category": "daily",
+    "name": "Dragon Crystal Dust Pack",
+    "image": "images/buttons/shop/dragon-dust-pack-img.png",
+    "cost": 119000,
+    "receive": {
+      "diamond": 800,
+      "recharge-exp": 5,
+      "dragon-crystal-dust": 15,
+      "universal-speedup-1h": 5,
+      "universal-speedup-5m": 60,
+      "vip-points": 30
+    }
+  },
+  "d-dragon-essence": {
+    "category": "daily",
+    "name": "Dragon Essence Pack",
+    "image": "images/buttons/shop/dragon-essence-pack-img.png",
+    "cost": 119000,
+    "receive": {
+      "diamond": 800,
+      "recharge-exp": 5,
+      "dragon-essence": 15,
+      "universal-speedup-1h": 5,
+      "universal-speedup-5m": 60,
+      "vip-points": 30
+    }
+  },
+  "d-pet-food": {
+    "category": "daily",
+    "name": "Pet Food Pack",
+    "image": "images/buttons/shop/pet-foot-pack-img.png",
+    "cost": 119000,
+    "receive": {
+      "diamond": 400,
+      "recharge-exp": 5,
+      "pet-food": 5000,
+      "universal-speedup-5m": 20,
+      "vip-points": 30
+    }
+  },
+  "d-gear-upgrade": {
+    "category": "daily",
+    "name": "Gear Upgrade Pack",
+    "image": "images/buttons/shop/gear-upgrade-pack-img.png",
+    "cost": 119000,
+    "receive": {
+      "diamond": 400,
+      "recharge-exp": 5,
+      "amethyst-plate": 300,
+      "gear-enhance-rune": 2000,
+      "vip-points": 30
+    }
+  },
+  "d-relic-growth": {
+    "category": "daily",
+    "name": "Relic Growth Pack",
+    "image": "images/buttons/shop/relic-growth-pack-img.png",
+    "cost": 119000,
+    "receive": {
+      "diamond": 400,
+      "recharge-exp": 5,
+      "arcane-crystal": 20,
+      "vip-points": 30
+    }
+  },
+  "d-rune-growth": {
+    "category": "daily",
+    "name": "Rune Growth Pack",
+    "image": "images/buttons/shop/rune-growth-pack-img.png",
+    "cost": 119000,
+    "receive": {
+      "diamond": 400,
+      "recharge-exp": 5,
+      "lv3-rune-chest": 3,
+      "vip-points": 30
+    }
+  },
+  "d-universal-speedup": {
+    "category": "daily",
+    "name": "Universal Speedup Pack",
+    "image": "images/buttons/shop/universal-speedup-pack-img.png",
+    "cost": 119000,
+    "receive": {
+      "diamond": 400,
+      "recharge-exp": 5,
+      "universal-speedup-5m": 100,
+      "vip-points": 30
+    }
+  },
+  "d-hero-growth": {
+    "category": "daily",
+    "name": "Hero Growth Pack",
+    "image": "images/buttons/shop/hero-growth-pack-img.png",
+    "cost": 119000,
+    "receive": {
+      "diamond": 400,
+      "recharge-exp": 5,
+      "gear-enhance-rune": 1000,
+      "skill-book": 300,
+      "recruitment-token": 5,
+      "vip-points": 30
+    }
+  },
+  "d-value-stone": {
+    "category": "daily",
+    "name": "Value Pack: Stones",
+    "image": "images/buttons/shop/value-pack-stone-img.png",
+    "cost": 119000,
+    "receive": {
+      "diamond": 800,
+      "recharge-exp": 5,
+      "legendary-level-tie-stone-chest": 8,
+      "vip-points": 30
+    }
+  },
+  "d-value-timber": {
+    "category": "daily",
+    "name": "Value Pack: Timber",
+    "image": "images/buttons/shop/value-pack-timber-img.png",
+    "cost": 119000,
+    "receive": {
+      "diamond": 800,
+      "recharge-exp": 5,
+      "legendary-level-tie-timber-chest": 8,
+      "vip-points": 30
+    }
+  },
+  "d-value-rubies": {
+    "category": "daily",
+    "name": "Value Pack: Rubies",
+    "image": "images/buttons/shop/value-pack-rubies-img.png",
+    "cost": 119000,
+    "receive": {
+      "diamond": 800,
+      "recharge-exp": 5,
+      "legendary-level-tie-ruby-chest": 8,
+      "vip-points": 30
+    }
+  },
+  "d-lord-gear": {
+    "category": "daily",
+    "name": "Lord Gear Pack",
+    "image": "images/buttons/shop/lord-gear-pack-img.png",
+    "cost": 119000,
+    "receive": {
+      "diamond": 400,
+      "recharge-exp": 5,
+      "refined-metal": 1500,
+      "magic-thread": 15,
+      "vip-points": 30
+    }
+  },
+
+  "w-meteoric-iron-core": {
+    "category": "weekly",
+    "name": "Meteroic Iron Core Pack",
+    "image": "images/buttons/shop/meteoric-pack-img.png",
+    "availability": 5,
+    "cost": 2399000,
+    "receive": {
+      "diamond": 8000,
+      "meteoric-iron-core": 100,
+      "vip-points": 648
+    }
+  },
+  "w-arcane-source-stone": {
+    "category":"weekly",
+    "name": "Arcane Source Stone Pack",
+    "image": "images/buttons/shop/arcane-source-stone-pack-img.png",
+    "availability": 2,
+    "cost": 2399000,
+    "receive": {
+      "diamond": 8000,
+      "arcane-source-stone": 10,
+      "vip-points": 648
+    }
+  },
+  "w-universal-heroic-spirit-shard": {
+    "category": "weekly",
+    "name": "Universal Heroic Spirit Shard",
+    "image": "images/buttons/shop/universal-heroic-spirit-shard-pack-img.png",
+    "availability": 10,
+    "cost": 2399000,
+    "receive": {
+      "diamond": 8000,
+      "universal-heroic-spirit-shard": 100,
+      "vip-points": 648
+    }
+  },
+  "w-scroll-seal": {
+    "category":"weekly",
+    "name": "Scroll Seal Pack",
+    "image": "images/buttons/shop/scroll-seal-pack-img.png",
+    "availability": 5,
+    "cost": 1199000,
+    "receive": {
+      "diamond": 4000,
+      "scroll-seal": 200,
+      "league-magicite": 100000,
+      "horde-magicite": 100000,
+      "nature-magicite": 100000,
+      "vip-points": 328
+    }
+  },
+  "w-behemoth-growth": {
+    "category": "weekly",
+    "name": "Behemoth Growth",
+    "image": "images/buttons/shop/behemoth-growth-pack-img.png",
+    "availability": 5,
+    "cost": 1199000,
+    "receive": {
+      "diamond": 4000,
+      "magicite-chest": 120000,
+      "legendary-resource-choice-chest": 10,
+      "vip-points": 328
+    }
+  },
+  "w-pet-essence": {
+    "category": "weekly",
+    "name": "Pet Essence Pack",
+    "image": "images/buttons/shop/pet-essence-pack-img.png",
+    "availability": 5,
+    "cost": 1199000,
+    "receive": {
+      "diamond": 4000,
+      "pet-essence": 1000,
+      "pet-food": 20000,
+      "vip-points": 328
+    }
+  },
+  "w-dragon-crystal-dust": {
+    "category":"weekly",
+    "name": "Dragon Crustal Dust Pack",
+    "image": "images/buttons/shop/dragon-dust-pack-img.png",
+    "availability": 5,
+    "cost": 1199000,
+    "receive": {
+      "diamond": 16000,
+      "dragon-crystal-dust": 350,
+      "legendary-resource-choice-chest": 50,
+      "vip-points": 328
+    }
+  },
+  "w-dragon-essence": {
+    "category": "weekly",
+    "name": "Dragon Essence Pack",
+    "image": "images/buttons/shop/dragon-essence-pack-img.png",
+    "availability": 5,
+    "cost": 1199000,
+    "receive": {
+      "diamond": 16000,
+      "dragon-essence": 350,
+      "legendary-resource-choice-chest": 50,
+      "vip-points": 328
+    }
+  },
+  "w-universal-speedup": {
+    "category": "weekly",
+    "name": "Universal Speedup Pack",
+    "image": "images/buttons/shop/universal-speedup-pack-img.png",
+    "availability": 10,
+    "cost": 1199000,
+    "receive": {
+      "diamond": 4000,
+      "universal-speedup-5m": 2500,
+      "vip-points": 328
+    }
+  },
+  "w-pet": {
+    "category": "weekly",
+    "name": "Pet Pack",
+    "image": "images/buttons/shop/pet-foot-pack-img.png",
+    "availability": 5,
+    "cost": 449000,
+    "receive": {
+      "diamond": 1600,
+      "rare-pet-random-chest": 3,
+      "pet-food": 10000,
+      "vip-points": 128
+    }
+  },
+  "w-universal-exclusive-gear-shard": {
+    "category": "weekly",
+    "name": "Universal Exclusive Gear Shard Pack",
+    "image": "images/buttons/shop/universal-exclusive-gear-pack-img.png",
+    "availability": 2,
+    "cost": 2399000,
+    "receive": {
+      "diamond": 8000,
+      "universal-exclusive-gear-shard": 100,
+      "vip-points": 648
+    }
+  },
+  "w-fast-growth": {
+    "category": "weekly",
+    "name": "Fast Growth Pack",
+    "image": "images/buttons/shop/value-pack-timber-img.png",
+    "availability": 5,
+    "cost": 449000,
+    "receive": {
+      "diamond": 1600,
+      "legendary-resource-choice-chest": 36,
+      "vip-points": 128
+    }
+  },
+  "w-stamina-value": {
+    "category": "weekly",
+    "name": "Stamina Value Pack",
+    "image": "images/buttons/shop/stamina-pack-img.png",
+    "availability": 5,
+    "cost": 229000,
+    "receive": {
+      "diamond": 800,
+      "stamina-potion-l": 6,
+      "universal-speedup-5m": 120,
+      "vip-points": 68
+    }
+  },
+  "w-influence-boost": {
+    "category": "weekly",
+    "name": "Influence Boost Pack",
+    "image": "images/buttons/shop/influence-boost-pack-img.png",
+    "availability": 2,
+    "cost": 2399000,
+    "receive": {
+      "diamond": 8000,
+      "gear-enhance-rune": 25000,
+      "skill-book": 8000,
+      "epic-level-tie-meat-chest": 40,
+      "vip-points": 648
+    }
+  },
+  "w-rune-boost": {
+    "category": "weekly",
+    "name": "Rune Boost Pack",
+    "image": "images/buttons/shop/rune-growth-pack-img.png",
+    "availability": 2,
+    "cost": 1199000,
+    "receive": {
+      "diamond": 4000,
+      "lv5-rune-choice-chest": 1,
+      "lv5-rune-chest": 1,
+      "lv3-rune-chest": 3,
+      "vip-points": 328
+    }
+  },
+  "w-relic-upgrade": {
+    "category": "weekly",
+    "name": "Relic Upgrade Pack",
+    "image": "images/buttons/shop/relic-growth-pack-img.png",
+    "availability": 2,
+    "cost": 1199000,
+    "receive": {
+      "diamond": 4000,
+      "arcane-crystal": 150,
+      "magic-stone": 160000,
+      "vip-points": 328
+    }
+  },
+  "w-gear-upgrade": {
+    "category": "weekly",
+    "name": "Gear Upgrade Pack",
+    "image": "images/buttons/shop/gear-upgrade-pack-img.png",
+    "availability": 2,
+    "cost": 1199000,
+    "receive": {
+      "diamond": 4000,
+      "universal-speedup-5m": 330,
+      "solar-gold-ingot": 6,
+      "vip-points": 328
+    }
+  },
+  "w-relic-upgrade-2": {
+    "category": "weekly",
+    "name": "Relic Upgrade Pack",
+    "image": "images/buttons/shop/relic-upgrade-pack-img.png",
+    "availability": 2,
+    "cost": 2399000,
+    "receive": {
+      "diamond": 8000,
+      "legendary-universal-relic-shard": 80,
+      "vip-points": 648
+    }
+  },
+  "w-universal-shard": {
+    "category":"weekly",
+    "name": "Universal Shard Pack",
+    "image": "images/buttons/shop/universal-shard-pack-img.png",
+    "availability": 2,
+    "cost": 2399000,
+    "receive": {
+      "diamond": 8000,
+      "legendary-universal-hero-shard": 60,
+      "vip-points": 648
+    }
+  },
+  "w-lord-gear": {
+    "category": "weekly",
+    "name": "Lord Gear Pack",
+    "image": "images/buttons/shop/lord-gear-pack-img.png",
+    "availability": 10,
+    "cost": 449000,
+    "receive": {
+      "diamond": 1600,
+      "refined-metal": 6000,
+      "magic-thread": 45,
+      "orichalcum": 8,
+      "vip-points": 128
+    }
+  },
+  "w-serverwide-broadcast": {
+    "category":"weekly",
+    "name": "Server-wide Broadcast Pack",
+    "image": "images/buttons/shop/server-wide-broadcast-pack-img.png",
+    "availability": 2,
+    "cost": 449000,
+    "receive": {
+      "diamond": 1600,
+      "serverwide-broadcast": 4,
+      "vip-points": 128
+    }
+  },
+  "value-weekly-pass": {
+    "category": "weekly-pass",
+    "name": "Value Weekly Pass",
+  
+    "cost": 119000,
+    "receive": {
+      "instantly": {
+        "diamond": 400,
+        "vip-points": 30,
+        "universal-speedup-1h": 2
+      },
+      "daily": {
+        "seaweed": 200,
+        "dragon-essence": 8,
+        "legendary-universal-hero-shard": 2
+      }
+    }
+  },
+  "deluxe-weekly-pass": {
+    "category": "weekly-pass",
+    "name": "Deluxe Weekly Pass",
+    "cost": 229000,
+    "receive": {
+      "instantly": {
+        "diamond": 800,
+        "vip-points": 68,
+        "universal-speedup-1h": 5
+      },
+      "daily": {
+        "seaweed": 200,
+        "dragon-essence": 14,
+        "legendary-universal-hero-shard": 3
+      }
+    }
+  }
+}

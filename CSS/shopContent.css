@@ -1,0 +1,1486 @@
+.shop-overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+
+  position: absolute;
+  z-index: 4;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  transition: opacity 0.1s ease;
+  pointer-events: none;
+}
+.shop-overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+.shop-window {
+  height: 100%;
+  width: 580px;
+  border: 4px solid rgba(189, 103, 72);
+  outline: 2px solid black;
+  border-radius: 20px;
+  box-shadow: var(--box-shadow);
+  background: rgba(157, 85, 57);
+  /* background: transparent; */
+
+  position: relative;
+  z-index: 1;
+  transition: all 0.15s ease;
+
+  transform: scale(0);
+  opacity: 0;
+  pointer-events: none;
+}
+.shop-window.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1);
+}
+.shop-window h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  font-style: bold;
+  text-shadow:
+    -1px -1px 1px rgba(142, 70, 26),
+    1px -1px 1px rgba(142, 70, 26),
+    -1px 1px 1px rgba(142, 70, 26),
+    1px 1px 1px rgba(142, 70, 26);
+
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+.shop-window-header {
+  width: 564px;
+  height: 100px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+
+  background: 
+    /* viền hình thoi */
+    linear-gradient(
+        45deg,
+        transparent 42%,
+        rgba(255, 255, 255, 0.08) 43%,
+        rgba(255, 255, 255, 0.08) 57%,
+        transparent 58%
+      )
+      0 0/48px 48px,
+    linear-gradient(
+        -45deg,
+        transparent 42%,
+        rgba(255, 255, 255, 0.08) 43%,
+        rgba(255, 255, 255, 0.08) 57%,
+        transparent 58%
+      )
+      0 0/48px 48px,
+    /* nền chính */
+    linear-gradient(to bottom, #c8844f 0%, rgba(157, 85, 57) 50%, #a76439 100%);
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  z-index: 1;
+}
+/* Footer */
+.shop-window-footer {
+  width: 572px;
+  height: 100px;
+  background: rgb(110, 59, 39);
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding: 0px 10px;
+
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+}
+.shop-window-footer::-webkit-scrollbar {
+  display: none;
+}
+.shop-window-footer .section {
+  height: 100px;
+  width: 100px;
+  background: transparent;
+  flex-shrink: 0;
+  position: relative;
+
+  transition: all 0.1s ease;
+}
+.section.selected {
+  background-image: url(../images/buttons/shop/BG.png);
+  background-repeat: none;
+  background-size: cover;
+  background-position: center;
+}
+
+.shop-window-footer .section .img {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+
+  transition: transform 0.15s ease;
+  transform: scale(1);
+}
+.shop-window-footer .section .text {
+  font-size: 1rem;
+  font-weight: 600;
+  font-style: bold;
+  text-shadow:
+    -1px -1px 1px rgba(142, 70, 26),
+    1px -1px 1px rgba(142, 70, 26),
+    -1px 1px 1px rgba(142, 70, 26),
+    1px 1px 1px rgba(142, 70, 26);
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+
+  transition: transform 0.15s ease;
+  transform: scale(1);
+}
+.shop-window-footer .section:active .text,
+.shop-window-footer .section:active .img {
+  transform: scale(0.95);
+}
+/* Inner */
+.shop-window-inner {
+  height: 890px;
+  width: 564px;
+  background: linear-gradient(200deg, rgba(239, 227, 211), rgba(225, 203, 181));
+
+  border-radius: 10px;
+
+  position: absolute;
+  z-index: 1;
+  bottom: 108px;
+  left: 4px;
+}
+.shop-window-inner .decor-1 {
+  height: 870px;
+  width: 544px;
+  background: transparent;
+
+  border: 2px solid rgba(142, 70, 26, 0.4);
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+
+  border-radius: 40px;
+  pointer-events: none;
+}
+.shop-window-inner .decor-2 {
+  height: 870px;
+  width: 544px;
+  background: transparent;
+
+  border: 2px solid rgba(142, 70, 26, 0.4);
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+
+  border-radius: 10px;
+  pointer-events: none;
+}
+/* Contents */
+
+/* Daily Special */
+.daily-special {
+  height: 870px;
+  width: 544px;
+  background: transparent;
+
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+
+  transition: all 0.2s ease;
+  transform: translateY(-100px);
+  opacity: 0;
+  pointer-events: none;
+}
+.daily-special.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.daily-special .img {
+  width: 300px;
+  height: 300px;
+  border: 1px solid green;
+  position: absolute;
+  top: 50px;
+  left: 122px;
+  z-index: 1;
+}
+.daily-special .hero-name {
+  font-size: 1.8rem;
+  font-weight: 600;
+  font-style: bold;
+  text-shadow:
+    -1px -1px 1px rgba(142, 70, 26),
+    1px -1px 1px rgba(142, 70, 26),
+    -1px 1px 1px rgba(142, 70, 26),
+    1px 1px 1px rgba(142, 70, 26);
+  text-align: center;
+
+  position: absolute;
+  top: 150px;
+  left: 20px;
+  z-index: 2;
+}
+.daily-special .details {
+  width: 70px;
+  height: 40px;
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  background: rgba(0, 0, 0, 0.4);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  top: 190px;
+  left: 20px;
+  z-index: 2;
+}
+.daily-special .details:active {
+  transform: scale(0.95);
+}
+.daily-special .hot-deal {
+  width: 530px;
+  height: 100px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 224, 100) 2%,
+    rgba(253, 162, 71)
+  );
+  border-radius: 10px;
+  border: 3px solid rgba(243, 145, 76);
+  outline: 1px solid rgba(190, 118, 80);
+
+  position: absolute;
+  top: 360px;
+  left: 7px;
+}
+.daily-special .hot-deal-btn {
+  width: 120px;
+  height: 70px;
+  border-radius: 10px;
+  background: rgba(253, 162, 71);
+  border: 1px solid rgba(190, 129, 57);
+  outline: 1px solid rgba(198, 105, 49);
+  box-shadow: 0px 6px 5px 0 rgba(198, 105, 49);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  right: 20px;
+  top: 12px;
+
+  font-size: 1.4rem;
+  font-weight: 600;
+  font-style: bold;
+  text-shadow:
+    -1px -1px 1px rgba(142, 70, 26),
+    1px -1px 1px rgba(142, 70, 26),
+    -1px 1px 1px rgba(142, 70, 26),
+    1px 1px 1px rgba(142, 70, 26);
+}
+.daily-special .hot-deal-btn:active {
+  background: rgb(206, 126, 45);
+  transform: scale(0.95);
+}
+.daily-special .text {
+  font-size: 1.3rem;
+  font-weight: 600;
+  font-style: bold;
+  text-shadow:
+    -1px -1px 1px rgba(142, 70, 26),
+    1px -1px 1px rgba(142, 70, 26),
+    -1px 1px 1px rgba(142, 70, 26),
+    1px 1px 1px rgba(142, 70, 26);
+
+  position: absolute;
+  top: 30px;
+  left: 140px;
+}
+.daily-special .container {
+  width: 530px;
+  height: 394px;
+  border-radius: 10px;
+
+  position: absolute;
+  top: 470px;
+  left: 7px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 0;
+}
+.daily-special .pack {
+  width: 100%;
+  height: 100px;
+  background: rgba(0, 0, 0, 0.4);
+
+  border-radius: 10px;
+
+  position: relative;
+}
+.daily-special .pack .purchase-btn {
+  width: 120px;
+  height: 50px;
+  border-radius: 10px;
+  background: rgba(253, 162, 71);
+  border: 1px solid rgba(190, 129, 57);
+  outline: 1px solid rgba(198, 105, 49);
+  box-shadow: 0px 6px 5px 0 rgba(198, 105, 49);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  right: 20px;
+  top: 23px;
+
+  font-size: 1.4rem;
+  font-weight: 600;
+  font-style: bold;
+  text-shadow:
+    -1px -1px 1px rgba(142, 70, 26),
+    1px -1px 1px rgba(142, 70, 26),
+    -1px 1px 1px rgba(142, 70, 26),
+    1px 1px 1px rgba(142, 70, 26);
+}
+.daily-special .pack .purchase-btn:active {
+  background: rgb(206, 126, 45);
+  transform: scale(0.95);
+}
+
+/* Heroic Offer */
+.heroic-offer {
+  height: 870px;
+  width: 544px;
+  background: transparent;
+
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+
+  transition: all 0.2s ease;
+  transform: translateY(-100px);
+  opacity: 0;
+  pointer-events: none;
+}
+.heroic-offer.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.heroic-offer .img {
+  width: 300px;
+  height: 300px;
+  border: 1px solid green;
+  position: absolute;
+  top: 50px;
+  left: 122px;
+  z-index: 1;
+}
+.heroic-offer .hero-name {
+  font-size: 1.8rem;
+  font-weight: 600;
+  font-style: bold;
+  text-shadow:
+    -1px -1px 1px rgba(142, 70, 26),
+    1px -1px 1px rgba(142, 70, 26),
+    -1px 1px 1px rgba(142, 70, 26),
+    1px 1px 1px rgba(142, 70, 26);
+  text-align: center;
+
+  position: absolute;
+  top: 150px;
+  left: 20px;
+  z-index: 2;
+}
+.heroic-offer .details {
+  width: 70px;
+  height: 40px;
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  background: rgba(0, 0, 0, 0.4);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  top: 190px;
+  left: 20px;
+  z-index: 2;
+}
+.heroic-offer .details:active {
+  transform: scale(0.95);
+}
+.heroic-offer .hot-deal {
+  width: 530px;
+  height: 100px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 224, 100) 2%,
+    rgba(253, 162, 71)
+  );
+  border-radius: 10px;
+  border: 3px solid rgba(243, 145, 76);
+  outline: 1px solid rgba(190, 118, 80);
+
+  position: absolute;
+  top: 360px;
+  left: 7px;
+}
+.heroic-offer .hot-deal-btn {
+  width: 120px;
+  height: 70px;
+  border-radius: 10px;
+  background: rgba(253, 162, 71);
+  border: 1px solid rgba(190, 129, 57);
+  outline: 1px solid rgba(198, 105, 49);
+  box-shadow: 0px 6px 5px 0 rgba(198, 105, 49);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  right: 20px;
+  top: 12px;
+
+  font-size: 1.4rem;
+  font-weight: 600;
+  font-style: bold;
+  text-shadow:
+    -1px -1px 1px rgba(142, 70, 26),
+    1px -1px 1px rgba(142, 70, 26),
+    -1px 1px 1px rgba(142, 70, 26),
+    1px 1px 1px rgba(142, 70, 26);
+}
+.heroic-offer .hot-deal-btn:active {
+  background: rgb(206, 126, 45);
+  transform: scale(0.95);
+}
+.heroic-offer .text {
+  font-size: 1.3rem;
+  font-weight: 600;
+  font-style: bold;
+  text-shadow:
+    -1px -1px 1px rgba(142, 70, 26),
+    1px -1px 1px rgba(142, 70, 26),
+    -1px 1px 1px rgba(142, 70, 26),
+    1px 1px 1px rgba(142, 70, 26);
+
+  position: absolute;
+  top: 30px;
+  left: 140px;
+}
+.heroic-offer .container {
+  width: 530px;
+  height: 394px;
+  border-radius: 10px;
+
+  position: absolute;
+  top: 470px;
+  left: 7px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 0;
+}
+.heroic-offer .pack {
+  width: 100%;
+  height: 100px;
+  background: rgba(0, 0, 0, 0.4);
+
+  border-radius: 10px;
+
+  position: relative;
+}
+.heroic-offer .pack .purchase-btn {
+  width: 120px;
+  height: 50px;
+  border-radius: 10px;
+  background: rgba(253, 162, 71);
+  border: 1px solid rgba(190, 129, 57);
+  outline: 1px solid rgba(198, 105, 49);
+  box-shadow: 0px 6px 5px 0 rgba(198, 105, 49);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  right: 20px;
+  top: 23px;
+
+  font-size: 1.4rem;
+  font-weight: 600;
+  font-style: bold;
+  text-shadow:
+    -1px -1px 1px rgba(142, 70, 26),
+    1px -1px 1px rgba(142, 70, 26),
+    -1px 1px 1px rgba(142, 70, 26),
+    1px 1px 1px rgba(142, 70, 26);
+}
+.heroic-offer .pack .purchase-btn:active {
+  background: rgb(206, 126, 45);
+  transform: scale(0.95);
+}
+/* Daily Packs */
+.daily-packs {
+  height: 870px;
+  width: 544px;
+  background: transparent;
+
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+
+  transition: all 0.2s ease;
+  transform: translateY(-100px);
+  opacity: 0;
+  pointer-events: none;
+}
+.daily-packs.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.daily-packs .accumulating-section {
+  height: 240px;
+  width: 536px;
+  border-radius: 40px;
+  background-image: url(../images/buttons/shop/accumulate-section-bg.png);
+  background-repeat: none;
+  background-size: cover;
+  background-position: center;
+
+  position: absolute;
+  left: 4px;
+  top: 4px;
+}
+.daily-packs .accumulating-section .title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  font-style: bold;
+  text-shadow:
+    -1px -1px 1px rgba(142, 70, 26),
+    1px -1px 1px rgba(142, 70, 26),
+    -1px 1px 1px rgba(142, 70, 26),
+    1px 1px 1px rgba(142, 70, 26);
+  text-align: center;
+
+  position: absolute;
+  top: 14px;
+  left: 14px;
+}
+.daily-packs .accumulating-section .container {
+  height: 30px;
+  width: 400px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+
+  position: absolute;
+  bottom: 50px;
+  left: 72px;
+}
+.daily-packs .accumulating-section .container > .img {
+  width: 60px;
+  height: 60px;
+
+  position: absolute;
+  bottom: -22px;
+  left: -24px;
+  z-index: 3;
+}
+.daily-packs .accumulating-section .container .milestones {
+  width: 6px;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.4);
+
+  position: absolute;
+  z-index: 1;
+}
+.daily-packs .accumulating-section .container .milestones span {
+  position: absolute;
+  bottom: -48px;
+  left: -8px;
+
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-style: bold;
+  text-shadow:
+    -1px -1px 1px rgba(142, 70, 26),
+    1px -1px 1px rgba(142, 70, 26),
+    -1px 1px 1px rgba(142, 70, 26),
+    1px 1px 1px rgba(142, 70, 26);
+  text-align: center;
+}
+.daily-packs .accumulating-section .container .milestones.one {
+  left: 18%;
+}
+.daily-packs .accumulating-section .container .milestones.two {
+  left: 38%;
+}
+.daily-packs .accumulating-section .container .milestones.three {
+  left: 58%;
+}
+.daily-packs .accumulating-section .container .milestones.four {
+  left: 80%;
+}
+.daily-packs .accumulating-section .container .milestones.five {
+  right: 0;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.daily-packs .accumulating-section .container .rewards {
+  width: 50px;
+  height: 50px;
+
+  background: rgba(132, 90, 145);
+  border-radius: 10px;
+  border: 3px solid rgba(243, 147, 252);
+  outline: 2px solid rgba(156, 81, 181);
+  box-shadow: 0 3px 1px 0 rgba(101, 49, 118);
+
+  position: absolute;
+  top: -200%;
+}
+.daily-packs .accumulating-section .container .rewards:active {
+  background: rgb(93, 64, 103);
+}
+.daily-packs .accumulating-section .container .rewards .img {
+  width: 40px;
+  height: 40px;
+
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  z-index: 1;
+}
+.daily-packs .accumulating-section .container .rewards .text {
+  font-size: 0.6rem;
+
+  position: absolute;
+  bottom: 0;
+  right: 2px;
+  z-index: 2;
+}
+.daily-packs .accumulating-section .container .rewards.one {
+  left: 50px;
+}
+.daily-packs .accumulating-section .container .rewards.two {
+  left: 130px;
+}
+.daily-packs .accumulating-section .container .rewards.three {
+  left: 210px;
+}
+.daily-packs .accumulating-section .container .rewards.four {
+  left: 290px;
+}
+.daily-packs .accumulating-section .container .rewards.five {
+  left: 370px;
+}
+/* Progress */
+.daily-packs .accumulating-section .container .progress {
+  border-radius: 5px;
+  border: 1px solid black;
+  box-shadow: -2px 5px 5px rgba(0, 0, 0, 0.4);
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgb(59, 162, 206) 50%,
+    rgb(37, 128, 208) 50%
+  );
+
+  width: 0%;
+  position: absolute;
+  left: 0;
+  z-index: 2;
+}
+.daily-packs .accumulating-section .container .current-point {
+  position: absolute;
+  bottom: -48px;
+
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-style: bold;
+  text-shadow:
+    -1px -1px 1px rgba(142, 70, 26),
+    1px -1px 1px rgba(142, 70, 26),
+    -1px 1px 1px rgba(142, 70, 26),
+    1px 1px 1px rgba(142, 70, 26);
+  text-align: center;
+}
+/* Packs Container */
+.daily-packs .packs-container {
+  width: 536px;
+  height: 616px;
+
+  position: absolute;
+  top: 250px;
+  left: 4px;
+  padding: 10px 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+
+  overflow-y: scroll;
+}
+.daily-packs .packs-container::-webkit-scrollbar {
+  display: none;
+}
+.daily-packs .packs-container .pack {
+  width: 530px;
+  height: 180px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  outline: 3px solid rgba(229, 171, 94);
+  border: 2px solid rgba(255, 245, 151);
+  box-shadow: 1px 3px 5px 0 rgba(0, 0, 0, 0.4);
+  background-image: url(../images/buttons/shop/packs.png);
+  background-repeat: none;
+  background-size: cover;
+  background-position: center;
+
+  position: relative;
+}
+.daily-packs .packs-container .pack .name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-style: bold;
+  text-shadow:
+    -1px -1px 1px rgba(142, 70, 26),
+    1px -1px 1px rgba(142, 70, 26),
+    -1px 1px 1px rgba(142, 70, 26),
+    1px 1px 1px rgba(142, 70, 26);
+  text-align: center;
+
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+.daily-packs .packs-container .pack .content {
+  width: 50%;
+  height: 60%;
+
+  position: absolute;
+  top: 40px;
+  left: 10px;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 20px;
+}
+.daily-packs .packs-container .pack .content .item {
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+  position: relative;
+
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 5px;
+  box-shadow: 0 2px 1px 0 rgba(123, 60, 33);
+
+  outline-width: 1px;
+  outline-style: solid;
+}
+.daily-packs .packs-container .pack .content .item .img {
+  width: 40px;
+  height: 40px;
+
+  position: absolute;
+  top: 3px;
+  left: 3px;
+}
+.daily-packs .packs-container .pack .content .item .amount {
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-style: bold;
+  text-shadow:
+    -1px -1px 1px rgb(0, 0, 0),
+    1px -1px 1px rgb(0, 0, 0),
+    -1px 1px 1px rgb(0, 0, 0),
+    1px 1px 1px rgb(0, 0, 0);
+
+  position: absolute;
+  bottom: 0px;
+  right: 4px;
+}
+.daily-packs .packs-container .pack .buy-btn {
+  width: 120px;
+  height: 50px;
+  border-radius: 10px;
+  background: rgba(253, 162, 71);
+  border: 1px solid rgba(190, 129, 57);
+  outline: 1px solid rgba(198, 105, 49);
+  box-shadow: 0px 6px 5px 0 rgba(198, 105, 49);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  right: 40px;
+  bottom: 18px;
+
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-style: bold;
+  text-shadow:
+    -1px -1px 1px rgba(142, 70, 26),
+    1px -1px 1px rgba(142, 70, 26),
+    -1px 1px 1px rgba(142, 70, 26),
+    1px 1px 1px rgba(142, 70, 26);
+}
+.daily-packs .packs-container .pack .img {
+  width: 200px;
+  height: 200px;
+
+  position: absolute;
+  bottom: 20px;
+  right: 4px;
+}
+.daily-packs .packs-container .pack .buy-btn:active {
+  background: rgb(206, 126, 45);
+  transform: scale(0.95);
+}
+
+/* Weekly Packs */
+.weekly-packs {
+  height: 870px;
+  width: 544px;
+  background: transparent;
+
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+
+  transition: all 0.2s ease;
+  transform: translateY(-100px);
+  opacity: 0;
+  pointer-events: none;
+}
+.weekly-packs.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.weekly-packs .timing {
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-style: bold;
+  text-shadow:
+    -1px -1px 1px rgba(142, 70, 26),
+    1px -1px 1px rgba(142, 70, 26),
+    -1px 1px 1px rgba(142, 70, 26),
+    1px 1px 1px rgba(142, 70, 26);
+
+  width: 540px;
+  height: 40px;
+
+  background: rgba(225, 200, 176);
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  top: 0px;
+  left: 2px;
+}
+.weekly-packs .packs-container {
+  width: 536px;
+  height: 820px;
+
+  position: absolute;
+  top: 50px;
+  left: 2px;
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: center;
+
+  padding: 10px 0;
+
+  overflow-y: scroll;
+}
+.weekly-packs .packs-container::-webkit-scrollbar {
+  display: none;
+}
+.weekly-packs .packs-container .pack {
+  width: 530px;
+  height: 180px;
+
+  border-radius: 10px;
+  border: 2px solid rgba(237, 169, 237);
+  outline: 3px solid rgba(153, 107, 175);
+  box-shadow: 2px 2px 0px 0 rgba(0, 0, 0, 0.4);
+  flex-shrink: 0;
+
+  position: relative;
+
+  background-image: url(../images/buttons/shop/weekly-packs-bg.png);
+  background-repeat: none;
+  background-size: cover;
+  background-position: center;
+}
+.weekly-packs .packs-container .pack .name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-style: bold;
+  text-shadow:
+    -1px -1px 1px rgb(0, 0, 0),
+    1px -1px 1px rgb(0, 0, 0),
+    -1px 1px 1px rgb(0, 0, 0),
+    1px 1px 1px rgb(0, 0, 0);
+  text-align: center;
+
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+.weekly-packs .packs-container .pack .availability {
+  font-size: 1rem;
+  font-weight: 600;
+  font-style: bold;
+  text-shadow:
+    -1px -1px 1px rgb(0, 0, 0),
+    1px -1px 1px rgb(0, 0, 0),
+    -1px 1px 1px rgb(0, 0, 0),
+    1px 1px 1px rgb(0, 0, 0);
+  text-align: center;
+
+  position: absolute;
+  left: 10px;
+  top: 36px;
+}
+.weekly-packs .packs-container .pack .content {
+  width: 50%;
+  height: 60%;
+
+  position: absolute;
+  top: 60px;
+  left: 14px;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 10px;
+}
+.weekly-packs .packs-container .pack .content .item {
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 5px;
+  box-shadow: 0 2px 1px 0 rgba(123, 60, 33);
+
+  outline-width: 1px;
+  outline-style: solid;
+  position: relative;
+}
+.weekly-packs .packs-container .pack .content .item .img {
+  width: 40px;
+  height: 40px;
+
+  position: absolute;
+  top: 3px;
+  left: 3px;
+}
+.weekly-packs .packs-container .pack .content .item .amount {
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-style: bold;
+  text-shadow:
+    -1px -1px 1px rgb(0, 0, 0),
+    1px -1px 1px rgb(0, 0, 0),
+    -1px 1px 1px rgb(0, 0, 0),
+    1px 1px 1px rgb(0, 0, 0);
+
+  position: absolute;
+  bottom: 0px;
+  right: 4px;
+}
+.weekly-packs .packs-container .pack .img {
+  width: 200px;
+  height: 200px;
+
+  position: absolute;
+  bottom: 20px;
+  right: 4px;
+}
+.weekly-packs .packs-container .pack .buy-btn {
+  width: 120px;
+  height: 50px;
+  border-radius: 10px;
+  background: rgba(253, 162, 71);
+  border: 1px solid rgba(190, 129, 57);
+  outline: 1px solid rgba(198, 105, 49);
+  box-shadow: 0px 6px 5px 0 rgba(198, 105, 49);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  right: 40px;
+  bottom: 18px;
+
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-style: bold;
+  text-shadow:
+    -1px -1px 1px rgba(142, 70, 26),
+    1px -1px 1px rgba(142, 70, 26),
+    -1px 1px 1px rgba(142, 70, 26),
+    1px 1px 1px rgba(142, 70, 26);
+}
+.weekly-packs .packs-container .pack .buy-btn:active {
+  background: rgb(206, 126, 45);
+  transform: scale(0.95);
+}
+
+/* Custom Weekly Pass */
+.custom-weekly-pass {
+  height: 870px;
+  width: 544px;
+  background: transparent;
+
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+
+  transition: all 0.2s ease;
+  transform: translateY(-100px);
+  opacity: 0;
+  pointer-events: none;
+}
+.custom-weekly-pass.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.custom-weekly-pass .information {
+  width: 100%;
+  height: 24%;
+
+  background-image: url(../images/buttons/shop/custom-weekly-pass.png);
+  background-repeat: none;
+  background-size: cover;
+  background-position: center;
+
+  border: 2px solid rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.custom-weekly-pass .information .title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  font-style: bold;
+  text-shadow:
+    -1px -1px 1px rgb(0, 0, 0),
+    1px -1px 1px rgb(0, 0, 0),
+    -1px 1px 1px rgb(0, 0, 0),
+    1px 1px 1px rgb(0, 0, 0);
+  text-align: center;
+
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+.custom-weekly-pass .information .description {
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-style: bold;
+  text-shadow:
+    -1px -1px 1px rgb(0, 0, 0),
+    1px -1px 1px rgb(0, 0, 0),
+    -1px 1px 1px rgb(0, 0, 0),
+    1px 1px 1px rgb(0, 0, 0);
+  text-align: left;
+
+  position: absolute;
+  left: 10px;
+  top: 50px;
+  width: 300px;
+}
+.custom-weekly-pass .information .img {
+  width: 200px;
+  height: 200px;
+
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.custom-weekly-pass .pack {
+  width: 100%;
+  height: 35%;
+  border: 2px solid rgba(255, 251, 84);
+  outline: 3px solid rgba(255, 176, 82);
+  border-radius: 10px;
+
+  background-image: url(../images/buttons/shop/custom-weekly-pack.png);
+  background-repeat: none;
+  background-size: cover;
+  background-position: center;
+
+  position: absolute;
+}
+.pack.silver {
+  top: 28%;
+}
+.pack.golden {
+  top: 65%;
+}
+.custom-weekly-pass .pack .buy-btn {
+  width: 160px;
+  height: 70px;
+  border-radius: 10px;
+  background: rgba(253, 162, 71);
+  border: 1px solid rgba(190, 129, 57);
+  outline: 1px solid rgba(198, 105, 49);
+  box-shadow: 0px 6px 5px 0 rgba(198, 105, 49);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  right: 20px;
+  bottom: 18px;
+
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-style: bold;
+  text-shadow:
+    -1px -1px 1px rgba(142, 70, 26),
+    1px -1px 1px rgba(142, 70, 26),
+    -1px 1px 1px rgba(142, 70, 26),
+    1px 1px 1px rgba(142, 70, 26);
+}
+.custom-weekly-pass .pack .buy-btn:active {
+  background: rgb(206, 126, 45);
+  transform: scale(0.95);
+}
+.custom-weekly-pass .pack .name {
+  font-size: 1.8rem;
+  font-weight: 600;
+  font-style: bold;
+  text-shadow:
+    -1px -1px 1px rgb(0, 0, 0),
+    1px -1px 1px rgb(0, 0, 0),
+    -1px 1px 1px rgb(0, 0, 0),
+    1px 1px 1px rgb(0, 0, 0);
+  text-align: left;
+
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.custom-weekly-pass .pack .img {
+  width: 250px;
+  height: 250px;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.custom-weekly-pass .pack .instantly .text {
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-style: bold;
+  text-shadow:
+    -1px -1px 1px rgb(0, 0, 0),
+    1px -1px 1px rgb(0, 0, 0),
+    -1px 1px 1px rgb(0, 0, 0),
+    1px 1px 1px rgb(0, 0, 0);
+  text-align: left;
+
+  position: absolute;
+  top: 50px;
+  left: 10px;
+}
+.custom-weekly-pass .pack .instantly .container {
+  width: 260px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  position: absolute;
+  top: 80px;
+  left: 10px;
+}
+.custom-weekly-pass .pack .instantly .container .item {
+  width: 80px;
+  height: 80px;
+
+  border-radius: 10px;
+  border-width: 3px;
+  border-style: solid;
+
+  outline-width: 1px;
+  outline-style: solid;
+
+  box-shadow: 0 2px 1px 0 rgba(118, 49, 49);
+
+  position: relative;
+}
+.custom-weekly-pass .pack .instantly .container .item .img {
+  width: 60px;
+  height: 60px;
+
+  position: absolute;
+  top: 6px;
+  left: 6px;
+}
+.custom-weekly-pass .pack .instantly .container .item .amount {
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-style: bold;
+  text-shadow:
+    -1px -1px 1px rgb(0, 0, 0),
+    1px -1px 1px rgb(0, 0, 0),
+    -1px 1px 1px rgb(0, 0, 0),
+    1px 1px 1px rgb(0, 0, 0);
+  text-align: left;
+
+  position: absolute;
+  bottom: 0;
+  right: 4px;
+}
+.custom-weekly-pass .pack .daily-reward .text {
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-style: bold;
+  text-shadow:
+    -1px -1px 1px rgb(0, 0, 0),
+    1px -1px 1px rgb(0, 0, 0),
+    -1px 1px 1px rgb(0, 0, 0),
+    1px 1px 1px rgb(0, 0, 0);
+  text-align: left;
+
+  position: absolute;
+  top: 180px;
+  left: 10px;
+}
+.custom-weekly-pass .pack .daily-reward .container {
+  width: 260px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  position: absolute;
+  top: 210px;
+  left: 10px;
+}
+.custom-weekly-pass .pack .daily-reward .container .item {
+  width: 80px;
+  height: 80px;
+  position: relative;
+
+  border-radius: 10px;
+  border-width: 2px;
+  border-style: solid;
+
+  outline-width: 1px;
+  outline-style: solid;
+
+  box-shadow: 0 2px 1px 0 rgba(118, 49, 49);
+}
+.custom-weekly-pass .pack .daily-reward .container .item .img {
+  width: 60px;
+  height: 60px;
+
+  position: absolute;
+  top: 6px;
+  left: 6px;
+
+}
+.custom-weekly-pass .pack .daily-reward .container .item .amount {
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-style: bold;
+  text-shadow:
+    -1px -1px 1px rgb(0, 0, 0),
+    1px -1px 1px rgb(0, 0, 0),
+    -1px 1px 1px rgb(0, 0, 0),
+    1px 1px 1px rgb(0, 0, 0);
+  text-align: left;
+
+  position: absolute;
+  bottom: 0;
+  right: 4px;
+}
+/* Diamond Store */
+.diamond-store {
+  height: 870px;
+  width: 544px;
+  background: transparent;
+
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+
+  transition: all 0.2s ease;
+  transform: translateY(-100px);
+  opacity: 0;
+  pointer-events: none;
+}
+.diamond-store.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.diamond-store .information {
+  width: 100%;
+  height: 24%;
+
+  background-image: url(../images/buttons/shop/diamond-store-bg.png);
+  background-repeat: none;
+  background-size: cover;
+  background-position: center;
+
+  border: 2px solid rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.diamond-store .information .title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  font-style: bold;
+  text-shadow:
+    -1px -1px 1px rgb(0, 0, 0),
+    1px -1px 1px rgb(0, 0, 0),
+    -1px 1px 1px rgb(0, 0, 0),
+    1px 1px 1px rgb(0, 0, 0);
+  text-align: left;
+
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+.diamond-store .container {
+  width: 100%;
+  height: 74%;
+  position: absolute;
+  top: 26%;
+  border-radius: 10px;
+
+  padding: 20px 20px;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+  overflow-y: scroll;
+}
+.diamond-store .container::-webkit-scrollbar {
+  display: none;
+}
+.diamond-store .container .purchase {
+  width: 240px;
+  height: 300px;
+
+  background-image: url(../images/buttons/shop/diamond-pack.png);
+  background-repeat: none;
+  background-size: cover;
+  background-position: center;
+
+  border: 2px solid rgba(142, 70, 26);
+  border-radius: 10px;
+
+  position: relative;
+}
+.diamond-store .container .purchase .text {
+  font-size: 1.4rem;
+  font-weight: 600;
+  font-style: bold;
+  text-shadow:
+    -1px -1px 1px rgb(0, 0, 0),
+    1px -1px 1px rgb(0, 0, 0),
+    -1px 1px 1px rgb(0, 0, 0),
+    1px 1px 1px rgb(0, 0, 0);
+  text-align: center;
+
+  padding-top: 8px;
+}
+.diamond-store .container .purchase .img {
+  width: 170px;
+  height: 170px;
+
+  position: absolute;
+  top: 35px;
+  left: 32px;
+}
+.diamond-store .container .purchase .buy-btn {
+  width: 140px;
+  height: 70px;
+  border-radius: 10px;
+  background: rgba(253, 162, 71);
+  border: 1px solid rgba(190, 129, 57);
+  outline: 1px solid rgba(198, 105, 49);
+  box-shadow: 0px 6px 5px 0 rgba(198, 105, 49);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  right: 48px;
+  bottom: 18px;
+
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-style: bold;
+  text-shadow:
+    -1px -1px 1px rgba(142, 70, 26),
+    1px -1px 1px rgba(142, 70, 26),
+    -1px 1px 1px rgba(142, 70, 26),
+    1px 1px 1px rgba(142, 70, 26);
+}
+.diamond-store .container .purchase .buy-btn:active {
+  background: rgb(206, 126, 45);
+  transform: scale(0.95);
+}

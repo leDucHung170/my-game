@@ -1,0 +1,1220 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap"
+      rel="stylesheet"
+    />
+    <title>Top Heroes</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="CSS/UI.css" />
+    <link rel="stylesheet" href="CSS/GuildContent.css" />
+    <link rel="stylesheet" href="CSS/MailContent.css" />
+    <link rel="stylesheet" href="CSS/Bag.css" />
+    <link rel="stylesheet" href="CSS/hero.css" />
+    <link rel="stylesheet" href="CSS/resource.css" />
+    <link rel="stylesheet" href="CSS/shopContent.css" />
+    <link rel="stylesheet" href="CSS/questContent.css" />
+    <link rel="stylesheet" href="CSS/vipContent.css" />
+    <link rel="stylesheet" href="CSS/topupCenter.css" />
+  </head>
+
+  <body>
+    <!-- Game Screen -->
+    <div class="game-screen">
+      <!-- Buttons -->
+      <div class="btns show">
+        <!-- World Map -->
+        <div class="world-map-btn">
+          <img draggable="false" class="img" src="images/buttons/map.png" />
+          <div class="text">World</div>
+        </div>
+        <!-- Hero -->
+        <div class="btn hero">
+          <img draggable="false" class="img" src="images/buttons/hero.png" />
+        </div>
+        <!-- Bag -->
+        <div class="btn bag">
+          <img draggable="false" class="img" src="images/buttons/bag.png" />
+        </div>
+        <!-- Mail -->
+        <div class="btn mail">
+          <img draggable="false" class="img" src="images/buttons/mail.png" />
+        </div>
+        <!-- Guild -->
+        <div class="btn guild">
+          <img draggable="false" class="img" src="images/buttons/guild.png" />
+        </div>
+        <!-- Quest -->
+        <div class="btn quest">
+          <img draggable="false" class="img" src="images/buttons/quest.png" />
+          <div class="text">Upgrade Stone Mine...</div>
+        </div>
+        <!-- Servers Map -->
+        <div class="btn-1 map">
+          <img
+            draggable="false"
+            class="img"
+            src="images/buttons/servers-map.png"
+          />
+          <div class="text">S10240</div>
+        </div>
+        <!-- Search -->
+        <div class="btn-1 search">
+          <img draggable="false" class="img" src="images/buttons/search.png" />
+        </div>
+        <!-- Bounty Quest -->
+        <div class="btn-1 bounty-quest">
+          <img
+            draggable="false"
+            class="img"
+            src="images/buttons/bounty-quest.png"
+          />
+          <div class="text">8/40</div>
+        </div>
+        <!-- Carriage -->
+        <div class="btn-1 carriage">
+          <img
+            draggable="false"
+            class="img"
+            src="images/buttons/carriage.png"
+          />
+        </div>
+        <!-- Resource Bar -->
+        <div class="resources">
+          <div class="meat">
+            <img draggable="false" class="img" src="images/buttons/meat.png" />
+            <div class="text">354M</div>
+          </div>
+          <div class="wood">
+            <img draggable="false" class="img" src="images/buttons/wood.png" />
+            <div class="text">354M</div>
+          </div>
+          <div class="stone">
+            <img draggable="false" class="img" src="images/buttons/stone.png" />
+            <div class="text">161M</div>
+          </div>
+          <div class="ruby">
+            <img draggable="false" class="img" src="images/buttons/ruby.png" />
+            <div class="text">8.62M</div>
+          </div>
+          <div class="diamond">
+            <img
+              draggable="false"
+              class="img"
+              src="images/buttons/diamond.png"
+            />
+            <div class="text">59732</div>
+          </div>
+          <div class="nutrient">
+            <img
+              draggable="false"
+              class="img"
+              src="images/buttons/nutrient-booster.png"
+            />
+            <div class="text">831K</div>
+          </div>
+          <div class="seaweed">
+            <img
+              draggable="false"
+              class="img"
+              src="images/buttons/seaweed.png"
+            />
+            <div class="text">3090</div>
+          </div>
+          <div class="dragon-essence">
+            <img
+              draggable="false"
+              class="img"
+              src="images/buttons/dragon-essence.png"
+            />
+            <div class="text">216</div>
+          </div>
+          <div class="dragon-dust">
+            <img
+              draggable="false"
+              class="img"
+              src="images/buttons/dragon-dust.png"
+            />
+            <div class="text">177</div>
+          </div>
+        </div>
+        <!-- Shop -->
+        <div class="shop-btn">
+          <img draggable="false" class="img" src="images/buttons/mall.png" />
+          <div class="text">Shop</div>
+        </div>
+        <!-- Information -->
+        <div class="information">
+          <div class="avatar">
+            <img draggable="false" class="img" src="images/buttons/PP.png" />
+            <div class="level">156</div>
+            <img
+              draggable="false"
+              class="border"
+              src="images/buttons/avatar-border/flower.png"
+            />
+          </div>
+          <div class="power">
+            <img draggable="false" class="img" src="images/buttons/power.png" />
+            <div class="text">99.9M</div>
+          </div>
+          <div class="stamina">
+            <img
+              draggable="false"
+              class="img"
+              src="images/buttons/stamina.png"
+            />
+            <div class="stamina-container"></div>
+            <div class="text">89</div>
+            <img draggable="false" class="add" src="images/buttons/add.png" />
+          </div>
+          <div class="vip">
+            <div class="text">VIP <span>8</span></div>
+            <img
+              draggable="false"
+              class="sparkling"
+              src="images/buttons/sparkling.png"
+            />
+          </div>
+          <div class="gold-block">
+            <img
+              draggable="false"
+              class="img"
+              src="images/buttons/gold-block.png"
+            />
+            <div class="text">4050.0</div>
+          </div>
+        </div>
+        <!-- Queue -->
+        <div class="queues">
+          <div class="toggle">
+            <div class="text">Queue (0/4)</div>
+            <img
+              draggable="false"
+              class="img"
+              src="images/buttons/triangle.png"
+            />
+          </div>
+          <div class="queue-container show">
+            <div class="first queue">
+              <img draggable="false" class="img" src="" />
+              <div class="text">07:05:35</div>
+            </div>
+            <div class="second queue">
+              <img draggable="false" class="img" src="" />
+              <div class="text">Idle</div>
+            </div>
+            <div class="third queue">
+              <img draggable="false" class="img" src="" />
+              <div class="text">Idle</div>
+            </div>
+            <div class="fourth queue">
+              <img draggable="false" class="img" src="" />
+              <div class="text">Idle</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Guild Window -->
+      <div class="guild-window-overlay">
+        <div class="guild-window">
+          <!-- Header -->
+          <div class="guild-header">
+            <h2>Guild</h2>
+          </div>
+          <!-- Footer -->
+          <div class="guild-footer">
+            <div class="back-btn">
+              <img
+                draggable="false"
+                class="img"
+                src="images/buttons/back-btn.png"
+              />
+            </div>
+            <div class="other-btns">
+              <div class="others">
+                <img
+                  draggable="false"
+                  class="img"
+                  src="images/buttons/settings.png"
+                />
+                <div class="text">Others</div>
+              </div>
+              <div class="application">
+                <img
+                  draggable="false"
+                  class="img"
+                  src="images/buttons/application.png"
+                />
+                <div class="text">Application</div>
+              </div>
+              <div class="record">
+                <img
+                  draggable="false"
+                  class="img"
+                  src="images/buttons/record.png"
+                />
+                <div class="text">Record</div>
+              </div>
+            </div>
+          </div>
+          <!-- Body -->
+          <div class="guild-body">
+            <div class="guild-info">
+              <img
+                draggable="false"
+                class="flag"
+                src="images/buttons/guild.png"
+                alt="guild-flag"
+              />
+              <div class="name">[CnC]Crimson Creed</div>
+              <div class="info">
+                <div class="gm">
+                  <img
+                    draggable="false"
+                    class="img"
+                    src="images/buttons/gm.png"
+                  />
+                  <div class="text">Guild Master</div>
+                  <div class="name">IMAXIMUSI</div>
+                </div>
+                <div class="influence">
+                  <img
+                    draggable="false"
+                    class="img"
+                    src="images/buttons/influence.png"
+                  />
+                  <div class="text">Influence</div>
+                  <div class="value">7.3B</div>
+                </div>
+                <div class="members">
+                  <img
+                    draggable="false"
+                    class="img"
+                    src="images/buttons/members.png"
+                  />
+                  <div class="text">Members</div>
+                  <div class="value">85/93</div>
+                  <img
+                    draggable="false"
+                    class="guild-mail-btn"
+                    src="images/buttons/mail.png"
+                  />
+                </div>
+                <div class="language">
+                  <img
+                    draggable="false"
+                    class="img"
+                    src="images/buttons/language.png"
+                  />
+                  <div class="text">Language</div>
+                  <div class="value">English</div>
+                </div>
+              </div>
+            </div>
+            <div class="declare-section">
+              <h2>Declaration</h2>
+              <p class="message">
+                Welcome to CnC! Stay active, be social, help others & have fun.
+                Message Aito to join. 3 days inactivity without notice= Kicked
+                out
+              </p>
+            </div>
+            <!-- Buttons Section -->
+            <div class="guild-btns-section">
+              <div class="btn-2 war">
+                <div class="text">War</div>
+              </div>
+              <div class="btn-2 territories">
+                <div class="text">Territories</div>
+              </div>
+              <div class="btn-2 gifts">
+                <div class="text">Gifts</div>
+              </div>
+              <div class="btn-2 trial-hall">
+                <div class="text">Trial Hall</div>
+              </div>
+              <div class="btn-2 tech">
+                <div class="text">Tech</div>
+              </div>
+              <div class="btn-2 store">
+                <div class="text">Store</div>
+              </div>
+              <div class="btn-2 vault">
+                <div class="text">Vault</div>
+              </div>
+              <div class="btn-2 help">
+                <div class="text">Help</div>
+              </div>
+              <div class="btn-2 members">
+                <div class="text">Members</div>
+              </div>
+              <div class="btn-2 rankings">
+                <div class="text">Rankings</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- War -->
+      <div class="war-overlay">
+        <div class="war-window">
+          <div class="header">
+            <h2>War</h2>
+          </div>
+          <div class="body"></div>
+          <div class="footer">
+            <div class="back-btn">
+              <img
+                draggable="false"
+                class="img"
+                src="images/buttons/back-btn.png"
+              />
+            </div>
+            <div class="other-btns"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Territories -->
+      <div class="territories-overlay">
+        <div class="territories-window">
+          <div class="header">
+            <h2>Territories</h2>
+          </div>
+          <div class="body"></div>
+          <div class="footer">
+            <div class="back-btn">
+              <img
+                draggable="false"
+                class="img"
+                src="images/buttons/back-btn.png"
+              />
+            </div>
+            <div class="other-btns"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Gifts -->
+      <div class="gifts-overlay">
+        <div class="gifts-window">
+          <div class="header">
+            <h2>Gifts</h2>
+          </div>
+          <div class="body"></div>
+          <div class="footer">
+            <div class="back-btn">
+              <img
+                draggable="false"
+                class="img"
+                src="images/buttons/back-btn.png"
+              />
+            </div>
+            <div class="other-btns"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Trial Hall -->
+      <div class="trialHall-overlay">
+        <div class="trialHall-window">
+          <div class="header">
+            <h2>Trial Hall</h2>
+          </div>
+          <div class="body"></div>
+          <div class="footer">
+            <div class="back-btn">
+              <img
+                draggable="false"
+                class="img"
+                src="images/buttons/back-btn.png"
+              />
+            </div>
+            <div class="other-btns"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Tech -->
+      <div class="tech-overlay">
+        <div class="tech-window">
+          <div class="header">
+            <h2>Tech</h2>
+          </div>
+          <div class="body"></div>
+          <div class="footer">
+            <div class="back-btn">
+              <img
+                draggable="false"
+                class="img"
+                src="images/buttons/back-btn.png"
+              />
+            </div>
+            <div class="other-btns"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Store -->
+      <div class="store-overlay">
+        <div class="store-window">
+          <div class="header">
+            <h2>Store</h2>
+          </div>
+          <div class="body"></div>
+          <div class="footer">
+            <div class="back-btn">
+              <img
+                draggable="false"
+                class="img"
+                src="images/buttons/back-btn.png"
+              />
+            </div>
+            <div class="other-btns"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Vault -->
+      <div class="vault-overlay">
+        <div class="vault-window">
+          <div class="header">
+            <h2>Vault</h2>
+          </div>
+          <div class="body"></div>
+          <div class="footer">
+            <div class="back-btn">
+              <img
+                draggable="false"
+                class="img"
+                src="images/buttons/back-btn.png"
+              />
+            </div>
+            <div class="other-btns"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Help -->
+      <div class="help-overlay">
+        <div class="help-window">
+          <div class="header">
+            <h2>Help</h2>
+          </div>
+          <div class="body"></div>
+          <div class="footer">
+            <div class="back-btn">
+              <img
+                draggable="false"
+                class="img"
+                src="images/buttons/back-btn.png"
+              />
+            </div>
+            <div class="other-btns"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Members -->
+      <div class="members-overlay">
+        <div class="members-window">
+          <div class="header">
+            <h2>Members</h2>
+          </div>
+          <div class="body"></div>
+          <div class="footer">
+            <div class="back-btn">
+              <img
+                draggable="false"
+                class="img"
+                src="images/buttons/back-btn.png"
+              />
+            </div>
+            <div class="other-btns"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Rankings -->
+      <div class="rankings-overlay">
+        <div class="rankings-window">
+          <div class="header">
+            <h2>Rankings</h2>
+          </div>
+          <div class="body"></div>
+          <div class="footer">
+            <div class="back-btn">
+              <img
+                draggable="false"
+                class="img"
+                src="images/buttons/back-btn.png"
+              />
+            </div>
+            <div class="other-btns"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Mail -->
+      <div class="mail-overlay">
+        <div class="mail-window">
+          <!-- Header -->
+          <div class="mail-header">
+            <h2>Mail</h2>
+          </div>
+          <div class="mail-footer">
+            <div class="delete-btn">Delete All Read</div>
+            <div class="read-all-btn">Read All</div>
+          </div>
+          <div class="mail-category">
+            <div class="war">War</div>
+            <div class="guild">Guild</div>
+            <div class="system">System</div>
+            <div class="report">Report</div>
+            <div class="favorite">Favorite</div>
+          </div>
+          <div class="mail-body"></div>
+        </div>
+      </div>
+      <!-- Bag -->
+      <div class="bag-overlay">
+        <div class="bag-window">
+          <h2>Bag</h2>
+          <div class="bag-window-inner">
+            <div class="decor-1"></div>
+            <div class="decor-2"></div>
+            <!-- Category -->
+            <div class="bag-category">
+              <div class="item">Item</div>
+              <div class="resource">Resource</div>
+              <div class="shard">Shard</div>
+              <div class="gear">Gear</div>
+              <div class="decor">Decor</div>
+            </div>
+            <!-- Items -->
+            <div class="bag-body">
+              <div class="uncommon">
+                <img
+                  draggable="false"
+                  class="img"
+                  src="images/buttons/diamond.png"
+                />
+                <p>9999</p>
+              </div>
+              <div class="common"></div>
+              <div class="rare"></div>
+              <div class="epic"></div>
+              <div class="legendary"></div>
+              <div class="mythic"></div>
+              <div class="mythic"></div>
+              <div class="mythic"></div>
+              <div class="mythic"></div>
+              <div class="mythic"></div>
+              <div class="mythic"></div>
+              <div class="mythic"></div>
+              <div class="mythic"></div>
+              <div class="mythic"></div>
+              <div class="mythic"></div>
+              <div class="mythic"></div>
+              <div class="mythic"></div>
+              <div class="mythic"></div>
+              <div class="mythic"></div>
+              <div class="mythic"></div>
+              <div class="mythic"></div>
+              <div class="mythic"></div>
+              <div class="mythic"></div>
+              <div class="mythic"></div>
+              <div class="mythic"></div>
+              <div class="mythic"></div>
+            </div>
+          </div>
+          <div class="bag-footer"></div>
+        </div>
+      </div>
+      <!-- Hero -->
+      <div class="hero-overlay">
+        <div class="hero-window">
+          <h2>Hero</h2>
+          <div class="hero-window-inner">
+            <div class="decor-1"></div>
+            <div class="decor-2"></div>
+            <div class="get-heroes-btn">Get Heroes</div>
+            <div class="show-queue">
+              <div class="text">Show Queue</div>
+              <div class="container">
+                <div class="toggle-btn off">Off</div>
+              </div>
+            </div>
+            <div class="hero-container">
+              <div class="counter">
+                <p class="available">Available</p>
+                <p class="number">51</p>
+              </div>
+              <div class="hero mythic"></div>
+              <div class="hero legendary"></div>
+              <div class="hero epic"></div>
+              <div class="hero rare"></div>
+              <div class="hero rare"></div>
+              <div class="hero mythic"></div>
+              <div class="hero mythic"></div>
+              <div class="hero mythic"></div>
+              <div class="hero mythic"></div>
+              <div class="hero mythic"></div>
+              <div class="hero mythic"></div>
+              <div class="hero mythic"></div>
+              <div class="hero mythic"></div>
+              <div class="hero mythic"></div>
+              <div class="hero mythic"></div>
+              <div class="hero mythic"></div>
+              <div class="hero mythic"></div>
+              <div class="hero mythic"></div>
+              <div class="hero mythic"></div>
+              <div class="hero mythic"></div>
+              <div class="hero mythic"></div>
+              <div class="hero mythic"></div>
+              <div class="hero mythic"></div>
+              <div class="hero mythic"></div>
+              <div class="hero mythic"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Resource -->
+      <div class="resource-overlay">
+        <div class="resource-window">
+          <h2>Resource</h2>
+          <div class="resource-window-inner">
+            <div class="decor-1"></div>
+            <div class="decor-2"></div>
+            <div class="resource-container">
+              <div class="resource">
+                <div class="img epic">
+                  <img draggable="false" src="images/buttons/diamond.png" />
+                </div>
+                <div class="text">Available:</div>
+                <div class="number">363636</div>
+              </div>
+              <div class="resource">
+                <div class="img rare">
+                  <img draggable="false" src="images/buttons/meat.png" />
+                </div>
+                <div class="text">Available:</div>
+                <div class="number">354M</div>
+              </div>
+              <div class="resource">
+                <div class="img rare">
+                  <img draggable="false" src="images/buttons/wood.png" />
+                </div>
+                <div class="text">Available:</div>
+                <div class="number">354M</div>
+              </div>
+              <div class="resource">
+                <div class="img rare">
+                  <img draggable="false" src="images/buttons/stone.png" />
+                </div>
+                <div class="text">Available:</div>
+                <div class="number">161M</div>
+              </div>
+              <div class="resource">
+                <div class="img epic">
+                  <img draggable="false" src="images/buttons/ruby.png" />
+                </div>
+                <div class="text">Available:</div>
+                <div class="number">8.62M</div>
+              </div>
+              <div class="resource">
+                <div class="img epic">
+                  <img
+                    draggable="false"
+                    src="images/buttons/nutrient-booster.png"
+                  />
+                </div>
+                <div class="text">Available:</div>
+                <div class="number">831K</div>
+              </div>
+              <div class="resource">
+                <div class="img epic">
+                  <img draggable="false" src="images/buttons/seaweed.png" />
+                </div>
+                <div class="text">Available:</div>
+                <div class="number">3090</div>
+              </div>
+              <div class="resource">
+                <div class="img legendary">
+                  <img
+                    draggable="false"
+                    src="images/buttons/dragon-essence.png"
+                  />
+                </div>
+                <div class="text">Available:</div>
+                <div class="number">216</div>
+              </div>
+              <div class="resource">
+                <div class="img legendary">
+                  <img draggable="false" src="images/buttons/dragon-dust.png" />
+                </div>
+                <div class="text">Available:</div>
+                <div class="number">177</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Shop -->
+      <div class="shop-overlay">
+        <div class="shop-window">
+          <h2>Shop</h2>
+          <div class="shop-window-header"></div>
+          <div class="shop-window-footer">
+            <div id="daily-special" class="section">
+              <img
+                draggable="false"
+                class="img"
+                src="images/buttons/shop/daily-special.png"
+              />
+              <div class="text">Daily Special</div>
+            </div>
+            <div id="heroic-offer" class="section">
+              <img
+                draggable="false"
+                class="img"
+                src="images/buttons/shop/heroic-offer.png"
+              />
+              <div class="text">Heroic Spirit Special Offer</div>
+            </div>
+            <div id="daily-packs" class="section">
+              <img
+                draggable="false"
+                class="img"
+                src="images/buttons/shop/daily-packs.png"
+              />
+              <div class="text">Daily Packs</div>
+            </div>
+            <div id="weekly-packs" class="section">
+              <img
+                draggable="false"
+                class="img"
+                src="images/buttons/shop/weekly-packs.png"
+              />
+              <div class="text">Weekly Packs</div>
+            </div>
+            <div id="custom-weekly-pass" class="section selected">
+              <img
+                draggable="false"
+                class="img"
+                src="images/buttons/shop/custom-weekly-packs.png"
+              />
+              <div class="text">Custom Weekly Pass</div>
+            </div>
+            <div id="pernament-privilege" class="section">
+              <img
+                draggable="false"
+                class="img"
+                src="images/buttons/shop/pernament-privilege.png"
+              />
+              <div class="text">Pernament Privilege</div>
+            </div>
+            <div id="monthly-privileges" class="section">
+              <img
+                draggable="false"
+                class="img"
+                src="images/buttons/shop/monthly-privileges.png"
+              />
+              <div class="text">Monthly Privileges</div>
+            </div>
+            <div id="construction-fund" class="section">
+              <img
+                draggable="false"
+                class="img"
+                src="images/buttons/shop/construction-fund.png"
+              />
+              <div class="text">Construction Fund</div>
+            </div>
+            <div id="adventure-fund" class="section">
+              <img
+                draggable="false"
+                class="img"
+                src="images/buttons/shop/adventure-fund.png"
+              />
+              <div class="text">Adventure Fund</div>
+            </div>
+            <div id="influence-fund" class="section">
+              <img
+                draggable="false"
+                class="img"
+                src="images/buttons/shop/influence-fund.png"
+              />
+              <div class="text">Influence Fund</div>
+            </div>
+            <div id="growth-fund" class="section">
+              <img
+                draggable="false"
+                class="img"
+                src="images/buttons/shop/growth-fund.png"
+              />
+              <div class="text">Growth Fund</div>
+            </div>
+            <div id="diamond-store" class="section">
+              <img
+                draggable="false"
+                class="img"
+                src="images/buttons/shop/diamond-store.png"
+              />
+              <div class="text">Diamond Store</div>
+            </div>
+          </div>
+          <div class="shop-window-inner">
+            <div class="daily-special">
+              <img class="img" src="" alt="Hero Img" />
+              <div class="hero-name">Bishop</div>
+              <div class="details">Details</div>
+              <div class="hot-deal">
+                <div id="149000" class="hot-deal-btn">149000</div>
+                <div class="text">Get all for a discount!</div>
+              </div>
+              <div class="container">
+                <div id="25000" class="pack">
+                  <div class="purchase-btn">25000</div>
+                </div>
+                <div id="49000" class="pack">
+                  <div class="purchase-btn">49000</div>
+                </div>
+                <div id="119000" class="pack">
+                  <div class="purchase-btn">119000</div>
+                </div>
+              </div>
+            </div>
+            <div class="heroic-offer">
+              <img draggable="false" class="img" src="" alt="Hero Img" />
+              <div class="hero-name">Bishop</div>
+              <div class="details">Details</div>
+              <div class="hot-deal">
+                <div id="149000" class="hot-deal-btn">149000</div>
+                <div class="text">Get all for a discount!</div>
+              </div>
+              <div class="container">
+                <div id="25000" class="pack">
+                  <div class="purchase-btn">25000</div>
+                </div>
+                <div id="49000" class="pack">
+                  <div class="purchase-btn">49000</div>
+                </div>
+                <div id="119000" class="pack">
+                  <div class="purchase-btn">119000</div>
+                </div>
+              </div>
+            </div>
+            <div class="daily-packs">
+              <div class="accumulating-section">
+                <div class="title">Daily Packs</div>
+                <div class="container">
+                  <img
+                    draggable="false"
+                    class="img"
+                    src="images/buttons/accumulate-medal.png"
+                  />
+                  <div class="milestones one">
+                    <span>10</span>
+                  </div>
+                  <div class="milestones two">
+                    <span>50</span>
+                  </div>
+                  <div class="milestones three">
+                    <span>100</span>
+                  </div>
+                  <div class="milestones four">
+                    <span>150</span>
+                  </div>
+                  <div class="milestones five">
+                    <span>200</span>
+                  </div>
+                  <div class="current-point">0</div>
+                  <div class="rewards one">
+                    <img
+                      draggable="false"
+                      class="img"
+                      src="images/buttons/diamond.png"
+                    />
+                    <div class="text">400</div>
+                  </div>
+                  <div class="rewards two epic">
+                    <img
+                      draggable="false"
+                      class="img"
+                      src="images/buttons/diamond.png"
+                    />
+
+                    <div class="text">2000</div>
+                  </div>
+                  <div class="rewards three">
+                    <img
+                      draggable="false"
+                      class="img"
+                      src="images/buttons/diamond.png"
+                    />
+
+                    <div class="text">4000</div>
+                  </div>
+                  <div class="rewards four">
+                    <img
+                      draggable="false"
+                      class="img"
+                      src="images/buttons/diamond.png"
+                    />
+
+                    <div class="text">8000</div>
+                  </div>
+                  <div class="rewards five">
+                    <img
+                      draggable="false"
+                      class="img"
+                      src="images/buttons/diamond.png"
+                    />
+
+                    <div class="text">12000</div>
+                  </div>
+                  <div class="progress"></div>
+                </div>
+              </div>
+              <div class="packs-container"></div>
+            </div>
+            <div class="weekly-packs">
+              <div class="timing">Weekly Packs</div>
+              <div class="packs-container"></div>
+            </div>
+            <div class="custom-weekly-pass">
+              <div class="information">
+                <div class="title">Custom Weekly Pass</div>
+                <div class="description">
+                  Purchase on any day unlocks all previous claim attempts.
+                </div>
+                <img
+                  draggable="false"
+                  class="img"
+                  src="images/buttons/shop/custom-weekly-pass-char-img.png"
+                />
+              </div>
+              <div id="value-weekly-pass" class="pack silver">
+                <div class="name">Value Weekly Pass</div>
+                <div class="instantly">
+                  <div class="text">Instantly Get</div>
+                  <div class="container"></div>
+                </div>
+                <div class="daily-reward">
+                  <div class="text">Daily Reward</div>
+                  <div class="container">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                  </div>
+                </div>
+                <img
+                  draggable="false"
+                  class="img"
+                  src="images/buttons/shop/silver-pack.png"
+                />
+                <div class="buy-btn">119.000</div>
+              </div>
+              <div id="deluxe-weekly-pass" class="pack golden">
+                <div class="name">Deluxe Weekly Pass</div>
+                <div class="instantly">
+                  <div class="text">Instantly Get</div>
+                  <div class="container"></div>
+                </div>
+                <div class="daily-reward">
+                  <div class="text">Daily Reward</div>
+                  <div class="container"></div>
+                </div>
+                <img
+                  draggable="false"
+                  class="img"
+                  src="images/buttons/shop/golden-pack.png"
+                />
+
+                <div class="buy-btn">229.000</div>
+              </div>
+            </div>
+            <div class="diamond-store show">
+              <div class="information">
+                <div class="title">Diamond Store</div>
+              </div>
+              <div class="container">
+                <div id="diamond-x80" class="purchase">
+                  <div class="text">Diamond x80</div>
+                  <img
+                    draggable="false"
+                    class="img"
+                    src="images/buttons/shop/diamond-store/pack-1.png"
+                  />
+                  <div class="buy-btn">25.000</div>
+                </div>
+                <div id="diamond-x400" class="purchase">
+                  <div class="text">Diamond x400</div>
+                  <img
+                    draggable="false"
+                    class="img"
+                    src="images/buttons/shop/diamond-store/pack-2.png"
+                  />
+
+                  <div class="buy-btn">119.000</div>
+                </div>
+                <div id="diamond-x800" class="purchase">
+                  <div class="text">Diamond x800</div>
+                  <img
+                    draggable="false"
+                    class="img"
+                    src="images/buttons/shop/diamond-store/pack-3.png"
+                  />
+
+                  <div class="buy-btn">229.000</div>
+                </div>
+                <div id="diamond-x1600" class="purchase">
+                  <div class="text">Diamond x1600</div>
+                  <img
+                    draggable="false"
+                    class="img"
+                    src="images/buttons/shop/diamond-store/pack-4.png"
+                  />
+
+                  <div class="buy-btn">449.000</div>
+                </div>
+                <div id="diamond-x4000" class="purchase">
+                  <div class="text">Diamond x4000</div>
+                  <img
+                    draggable="false"
+                    class="img"
+                    src="images/buttons/shop/diamond-store/pack-5.png"
+                  />
+
+                  <div class="buy-btn">1.199.000</div>
+                </div>
+                <div id="diamond-x8000" class="purchase">
+                  <div class="text">Diamond x8000</div>
+                  <img
+                    draggable="false"
+                    class="img"
+                    src="images/buttons/shop/diamond-store/pack-6.png"
+                  />
+
+                  <div class="buy-btn">2.399.000</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Quest -->
+      <div class="quest-overlay">
+        <div class="quest-window">
+          <h2>Quest</h2>
+          <div class="quest-window-inner">
+            <div class="decor-1"></div>
+            <div class="decor-2"></div>
+          </div>
+        </div>
+      </div>
+      <!-- VIP -->
+      <div class="vip-overlay">
+        <div class="vip-window">
+          <h2>VIP</h2>
+          <div class="vip-window-inner">
+            <div class="decor-1"></div>
+            <div class="decor-2"></div>
+            <img
+              draggable="false"
+              src="images/buttons/vip-card.png"
+              class="img"
+              alt="vipcard"
+            />
+            <div class="vip-level">VIP <span>8</span></div>
+            <div class="vip-progress-bar">
+              <div class="number">8517/10000</div>
+              <div class="progress"></div>
+            </div>
+            <div class="buy-vip-exp">
+              <img draggable="false" class="img" src="images/buttons/add.png" />
+            </div>
+            <div class="privileges"></div>
+            <img
+              draggable="false"
+              class="left-btn"
+              src="images/buttons/left-nav.png"
+            />
+            <img
+              draggable="false"
+              class="right-btn"
+              src="images/buttons/right-nav.png"
+            />
+          </div>
+        </div>
+      </div>
+      <!-- TopUp -->
+      <div class="topup-overlay">
+        <div class="topup-window">
+          <div class="topup-window-inner">
+            <div class="decor-1"></div>
+            <div class="decor-2"></div>
+            <h1>OFFICIAL TOP UP CENTER</h1>
+            <p>1. Using Gold Blocks to make Pack purchases in the game.</p>
+            <p>2. Using Gold Blocks increases VIP experience.</p>
+            <p>
+              3. You cannot use Gold Blocks to purchase Packs when your balance
+              is insufficient.
+            </p>
+            <p class="amount">Gold Blocks: <span>4050.0</span> ₫</p>
+            <div class="purchase-container">
+              <div id="25000" class="purchase">25.000 ₫</div>
+              <div id="49000" class="purchase">49.000 ₫</div>
+              <div id="50000" class="purchase">50.000 ₫</div>
+              <div id="73000" class="purchase">73.000 ₫</div>
+              <div id="100000" class="purchase">100.000 ₫</div>
+              <div id="119000" class="purchase">119.000 ₫</div>
+              <div id="149000" class="purchase">149.000 ₫</div>
+              <div id="200000" class="purchase">200.000 ₫</div>
+              <div id="229000" class="purchase">229.000 ₫</div>
+              <div id="329000" class="purchase">329.000 ₫</div>
+              <div id="449000" class="purchase">449.000 ₫</div>
+              <div id="500000" class="purchase">500.000 ₫</div>
+              <div id="699000" class="purchase">699.000 ₫</div>
+              <div id="1000000" class="purchase">1.000.000 ₫</div>
+              <div id="1199000" class="purchase">1.199.000 ₫</div>
+              <div id="2000000" class="purchase">2.000.000 ₫</div>
+              <div id="2399000" class="purchase">2.399.000 ₫</div>
+              <div id="5000000" class="purchase">5.000.000 ₫</div>
+              <div id="10000000" class="purchase">10.000.000 ₫</div>
+              <div id="11990000" class="purchase">11.990.000 ₫</div>
+              <div id="14990000" class="purchase">14.990.000 ₫</div>
+            </div>
+            <div class="confirmation">
+              <p>Are you sure you want to make this purchase?</p>
+              <div>
+                <div class="cancel">Cancel</div>
+                <div class="confirm">Confirm</div>
+              </div>
+            </div>
+            <div class="successful">
+              <p>Your purchase has been completed successfully.</p>
+              <div class="close">Close</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script
+    type="module"
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+  ></script>
+  <script
+    nomodule
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+  ></script>
+  <!-- Java Script -->
+  <script src="JS/utils.js"></script>
+  <script src="JS/guild.js"></script>
+  <script src="JS/mail.js"></script>
+  <script src="JS/bag.js"></script>
+  <script src="JS/hero.js"></script>
+  <script src="JS/resource.js"></script>
+  <script src="JS/shop.js"></script>
+  <script src="JS/quest.js"></script>
+  <script src="JS/vip.js"></script>
+  <script src="JS/topupCenter.js"></script>
+  <script src="JS/usersHandler.js"></script>
+</html>

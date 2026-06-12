@@ -1,0 +1,411 @@
+//  Declare
+const shopBtn = document.querySelector(".shop-btn");
+const shopOverlay = document.querySelector(".shop-overlay");
+const shopWindow = document.querySelector(".shop-window");
+const shopSection = document.querySelector(".shop-window-footer");
+
+const dailySpecialBtn = shopSection.querySelector("#daily-special");
+const dailySpecialContainer = shopWindow.querySelector(".daily-special");
+const heroicOfferBtn = shopSection.querySelector("#heroic-offer");
+const heroicOfferContainer = shopWindow.querySelector(".heroic-offer");
+const dailyPackBtn = shopSection.querySelector("#daily-packs");
+const dailyPackContainer = shopWindow.querySelector(".daily-packs");
+const dailyPackContent = dailyPackContainer.querySelector(".packs-container");
+const weeklyPackBtn = shopSection.querySelector("#weekly-packs");
+const weeklyPackContainer = shopWindow.querySelector(".weekly-packs");
+const weeklyContent = weeklyPackContainer.querySelector(".packs-container");
+const customWeeklyPassBtn = shopSection.querySelector("#custom-weekly-pass");
+const customWeeklyPassContainer = shopWindow.querySelector(
+  ".custom-weekly-pass",
+);
+const diamondStoreBtn = shopSection.querySelector("#diamond-store");
+const diamondStoreContainer = shopWindow.querySelector(".diamond-store");
+const diamondStoreContent = diamondStoreContainer.querySelector(".container");
+
+const allSectionBtns = [
+  dailySpecialBtn,
+  heroicOfferBtn,
+  dailyPackBtn,
+  weeklyPackBtn,
+  customWeeklyPassBtn,
+  diamondStoreBtn,
+];
+const allSectionContainers = [
+  dailySpecialContainer,
+  heroicOfferContainer,
+  dailyPackContainer,
+  weeklyPackContainer,
+  customWeeklyPassContainer,
+  diamondStoreContainer,
+];
+
+// Load Shop data
+let packs;
+let items;
+async function loadPacks() {
+  const [packsResponse, itemsResponse] = await Promise.all([
+    fetch("data/packs.json"),
+    fetch("data/items.json"),
+  ]);
+  packs = await packsResponse.json();
+  items = await itemsResponse.json();
+}
+loadPacks();
+
+// Render
+function createReceiveHTML(receive) {
+  return Object.entries(receive)
+    .map(([itemId, amount]) => {
+      const item = items[itemId];
+      const amounts = calculatingNumber(amount);
+      if (!item) {
+        console.error("Missing item:", itemId);
+        return `
+      <div class="item">
+      <img draggable="false" class="img" src="">
+      <span class="amount">000</span>
+      </div>
+      `;
+      }
+      return `
+  <div data-item-id="${itemId}" class="item ${item.rarity}">
+  <img draggable="false" class="img" src="${item.image}">
+  <span class="amount">${amounts}</span>
+  </div>
+  `;
+    })
+    .join("");
+}
+// Daily Packs
+function renderDailyPacks() {
+  const dailyPacks = Object.entries(packs).filter(
+    ([id, pack]) => pack.category === "daily",
+  );
+  let html = "";
+  dailyPacks.forEach(([id, pack]) => {
+    const receiveHTML = createReceiveHTML(pack.receive);
+    const cost = format(pack.cost);
+    html += `
+    <div class="pack" data-pack-id="${id}">
+      <img draggable="false" class="img" src="${pack.image}" alt="${pack.name}"/>
+      <div class="name">${pack.name}</div>
+      <div class="content">${receiveHTML}</div>
+      <div class="buy-btn">${cost}</div>
+    </div>
+    `;
+  });
+  dailyPackContent.innerHTML = html;
+}
+// Weekly Packs
+function renderWeeklyPacks() {
+  const weeklyPacks = Object.entries(packs).filter(
+    ([id, pack]) => pack.category === "weekly",
+  );
+  let html = "";
+  weeklyPacks.forEach(([id, pack]) => {
+    const receiveHTML = createReceiveHTML(pack.receive);
+    const cost = format(pack.cost);
+    html += `
+    <div class="pack" data-pack-id="${id}">
+      <img draggable="false" class="img" src="${pack.image}" alt="${pack.name}"/>
+      <div class="availability">Availability: <span>${pack.availability}</span></div>
+      <div class="name">${pack.name}</div>
+      <div class="content">${receiveHTML}</div>
+      <div class="buy-btn">${cost}</div>
+    </div>
+    `;
+  });
+  weeklyContent.innerHTML = html;
+}
+// Custom Weekly Pass
+function renderValueWeeklyPass() {
+  const pack = packs["value-weekly-pass"];
+
+  const instantlyHTML = createReceiveHTML(pack.receive.instantly);
+  const dailyHTML = createReceiveHTML(pack.receive.daily);
+  const instantlyContainer = document.querySelector(
+    "#value-weekly-pass .instantly .container",
+  );
+  const dailyContainer = customWeeklyPassContainer.querySelector(
+    "#value-weekly-pass .daily-reward .container",
+  );
+
+  instantlyContainer.innerHTML = instantlyHTML;
+  dailyContainer.innerHTML = dailyHTML;
+}
+function renderDeluxeWeeklyPass() {
+  const pack = packs["deluxe-weekly-pass"];
+
+  const instantlyHTML = createReceiveHTML(pack.receive.instantly);
+  const dailyHTML = createReceiveHTML(pack.receive.daily);
+
+  const instantlyContainer = customWeeklyPassContainer.querySelector(
+    "#deluxe-weekly-pass .instantly .container",
+  );
+  const dailyContainer = customWeeklyPassContainer.querySelector(
+    "#deluxe-weekly-pass .daily-reward .container",
+  );
+
+  instantlyContainer.innerHTML = instantlyHTML;
+  dailyContainer.innerHTML = dailyHTML;
+}
+// Drag
+let isDraggingShopSection = false;
+let hasShopSectionDragged = false;
+let startXShopSection;
+
+let isDraggingDailyContent = false;
+let hasDailyContentDragged = false;
+let startYDailyContent;
+
+let isDraggingWeeklyContent = false;
+let hasWeeklyContentDragged = false;
+let startYWeeklyContent;
+
+let isDraggingDiamondStoreContent = false;
+let hasDiamondStoreContent = false;
+let startYDiamondStoreContent;
+// Function
+function openShop() {
+  btnLayer.classList.remove("show");
+  shopOverlay.classList.add("show");
+  shopWindow.classList.add("show");
+  shopSection.scrollLeft = 0;
+}
+function closeShop() {
+  btnLayer.classList.add("show");
+  shopOverlay.classList.remove("show");
+  shopWindow.classList.remove("show");
+}
+// Drag footer bar
+function startDragShopSection(e) {
+  isDraggingShopSection = true;
+  hasShopSectionDragged = false;
+  startX = e.clientX;
+  startXShopSection = shopSection.scrollLeft;
+}
+function dragShopSection(e) {
+  if (!isDraggingShopSection) {
+    return;
+  }
+  const dx = e.clientX - startX;
+  const speed = 1;
+  if (Math.abs(dx) > 5) {
+    hasShopSectionDragged = true;
+  }
+  shopSection.scrollLeft = startXShopSection - dx * speed;
+}
+function stopDragShopSection(e) {
+  isDraggingShopSection = false;
+}
+// Drag Daily Content
+function startDragDailyContent(e) {
+  isDraggingDailyContent = true;
+  hasDailyContentDragged = false;
+  startY = e.clientY;
+  startYDailyContent = dailyPackContent.scrollTop;
+}
+function dragDailyContent(e) {
+  if (!isDraggingDailyContent) {
+    return;
+  }
+  const dy = e.clientY - startY;
+  const speed = 0.9;
+  if (Math.abs(dy) > 5) {
+    hasDailyContentDragged = true;
+  }
+  dailyPackContent.scrollTop = startYDailyContent - dy * speed;
+}
+function stopDragDailyContent(e) {
+  isDraggingDailyContent = false;
+}
+// Drag Weekly Content
+function startDragWeeklyContent(e) {
+  isDraggingWeeklyContent = true;
+  hasWeeklyContentDragged = false;
+  startY = e.clientY;
+  startYWeeklyContent = weeklyContent.scrollTop;
+}
+function dragWeeklyContent(e) {
+  if (!isDraggingWeeklyContent) {
+    return;
+  }
+  const dy = e.clientY - startY;
+  const speed = 0.9;
+  if (Math.abs(dy) > 5) {
+    hasWeeklyContentDragged = true;
+  }
+  weeklyContent.scrollTop = startYWeeklyContent - dy * speed;
+}
+function stopDragWeeklyContent(e) {
+  isDraggingWeeklyContent = false;
+}
+// Drag Diamond Store Content
+function startDragDiamondStoreContent(e) {
+  isDraggingDiamondStoreContent = true;
+  hasDiamondStoreContent = false;
+  startY = e.clientY;
+  startYDiamondStoreContent = diamondStoreContent.scrollTop;
+}
+function dragDiamondStoreContent(e) {
+  if (!isDraggingDiamondStoreContent) {
+    return;
+  }
+  const dy = e.clientY - startY;
+  const speed = 0.9;
+  if (Math.abs(dy) > 5) {
+    hasDiamondStoreContent = true;
+  }
+  diamondStoreContent.scrollTop = startYDiamondStoreContent - dy * speed;
+}
+function stopDragDiamondStoreContent(e) {
+  isDraggingDiamondStoreContent = false;
+}
+// Unselect
+function unselected() {
+  allSectionBtns.forEach((btn) => {
+    btn.classList.remove("selected");
+  });
+  allSectionContainers.forEach((container) => {
+    container.classList.remove("show");
+  });
+}
+// Open
+function dailySpecial() {
+  dailySpecialContainer.classList.add("show");
+  dailySpecialBtn.classList.add("selected");
+}
+function heroicOffer() {
+  heroicOfferBtn.classList.add("selected");
+  heroicOfferContainer.classList.add("show");
+}
+function dailyPacks() {
+  renderDailyPacks();
+  dailyPackBtn.classList.add("selected");
+  dailyPackContainer.classList.add("show");
+}
+function weeklyPacks() {
+  renderWeeklyPacks();
+  weeklyPackBtn.classList.add("selected");
+  weeklyPackContainer.classList.add("show");
+}
+function customWeeklyPass() {
+  renderValueWeeklyPass();
+  renderDeluxeWeeklyPass();
+  customWeeklyPassBtn.classList.add("selected");
+  customWeeklyPassContainer.classList.add("show");
+}
+function diamondStore() {
+  diamondStoreBtn.classList.add("selected");
+  diamondStoreContainer.classList.add("show");
+}
+// EventListener
+shopBtn.addEventListener("click", openShop);
+document.addEventListener("click", (e) => {
+  const classes = e.target.classList;
+
+  if (classes == shopOverlay.classList) {
+    closeShop();
+    return;
+  }
+});
+shopSection.addEventListener("wheel", (e) => {
+  e.preventDefault();
+  shopSection.scrollLeft += e.deltaY * 0.3;
+});
+// Scroll
+// Footer Bar
+shopSection.addEventListener("mousedown", startDragShopSection);
+document.addEventListener("mousemove", (e) => {
+  if (isDraggingShopSection) {
+    dragShopSection(e);
+    console.log(`return after dragShop`);
+    return;
+  }
+});
+document.addEventListener("mouseup", (e) => {
+  if (isDraggingShopSection) {
+    stopDragShopSection(e);
+    console.log(`return after stopDragShop`);
+    return;
+  }
+});
+// Daily Pack Content
+dailyPackContent.addEventListener("mousedown", startDragDailyContent);
+document.addEventListener("mousemove", (e) => {
+  if (isDraggingDailyContent) {
+    dragDailyContent(e);
+    return;
+  }
+});
+document.addEventListener("mouseup", (e) => {
+  if (isDraggingDailyContent) {
+    stopDragDailyContent(e);
+    return;
+  }
+});
+// Weekly Pack Content
+weeklyContent.addEventListener("mousedown", startDragWeeklyContent);
+document.addEventListener("mousemove", (e) => {
+  if (isDraggingWeeklyContent) {
+    dragWeeklyContent(e);
+    return;
+  }
+});
+document.addEventListener("mouseup", (e) => {
+  if (isDraggingWeeklyContent) {
+    stopDragWeeklyContent(e);
+    return;
+  }
+});
+// Diamond Store Content
+diamondStoreContent.addEventListener("mousedown", startDragDiamondStoreContent);
+document.addEventListener("mousemove", (e) => {
+  if (isDraggingDiamondStoreContent) {
+    dragDiamondStoreContent(e);
+    return;
+  }
+});
+document.addEventListener("mouseup", (e) => {
+  if (isDraggingDiamondStoreContent) {
+    stopDragDiamondStoreContent(e);
+    return;
+  }
+});
+// Section Btns
+dailySpecialBtn.addEventListener("click", () => {
+  unselected();
+  setTimeout(() => {
+    dailySpecial();
+  }, 100);
+});
+heroicOfferBtn.addEventListener("click", () => {
+  unselected();
+  setTimeout(() => {
+    heroicOffer();
+  }, 100);
+});
+dailyPackBtn.addEventListener("click", () => {
+  unselected();
+  setTimeout(() => {
+    dailyPacks();
+  }, 100);
+});
+weeklyPackBtn.addEventListener("click", () => {
+  unselected();
+  setTimeout(() => {
+    weeklyPacks();
+  }, 100);
+});
+customWeeklyPassBtn.addEventListener("click", () => {
+  unselected();
+  setTimeout(() => {
+    customWeeklyPass();
+  }, 100);
+});
+diamondStoreBtn.addEventListener("click", () => {
+  unselected();
+  setTimeout(() => {
+    diamondStore();
+  }, 100);
+});

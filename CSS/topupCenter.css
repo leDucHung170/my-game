@@ -1,0 +1,225 @@
+.topup-overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+
+  position: absolute;
+  z-index: 4;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  transition: opacity 0.1s ease;
+  pointer-events: none;
+}
+.topup-overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+.topup-window {
+  height: 940px;
+  width: 1080px;
+  border: 4px solid rgba(189, 103, 72);
+  outline: 2px solid black;
+  border-radius: 20px;
+  box-shadow: var(--box-shadow);
+  background: rgba(157, 85, 57);
+
+  position: relative;
+  z-index: 1;
+  transition: all 0.15s ease;
+
+  transform: scale(0);
+  opacity: 0;
+  pointer-events: none;
+}
+.topup-window.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1);
+}
+.topup-window-inner {
+  height: 926px;
+  width: 1064px;
+  background: rgba(241, 241, 241);
+
+  border-radius: 20px;
+
+  position: absolute;
+  z-index: 1;
+  bottom: 4px;
+  left: 4px;
+}
+.topup-window-inner .decor-1 {
+  height: 906px;
+  width: 1046px;
+  background: transparent;
+
+  border: 2px solid rgba(142, 70, 26, 0.4);
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+
+  border-radius: 40px;
+  pointer-events: none;
+}
+.topup-window-inner .decor-2 {
+  height: 906px;
+  width: 1046px;
+  border: 2px solid rgba(142, 70, 26, 0.4);
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: transparent;
+
+  border-radius: 10px;
+  pointer-events: none;
+}
+.topup-window-inner h1 {
+  font-size: 4rem;
+  font-weight: 600;
+  font-style: bold;
+  color: rgba(142, 70, 26);
+
+  text-align: center;
+}
+.topup-window-inner p {
+  font-size: 1.5rem;
+  color: rgba(142, 70, 26);
+  padding-left: 10%;
+}
+.topup-window-inner .amount {
+  color: black;
+  padding-left: 40%;
+}
+.topup-window-inner .purchase-container {
+  width: 70%;
+  height: 49%;
+
+  position: absolute;
+  left: 15%;
+  z-index: 2;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  gap: 20px;
+  padding: 10px 50px;
+
+  overflow-y: auto;
+}
+.topup-window-inner .purchase-container::-webkit-scrollbar {
+  display: none;
+}
+.topup-window-inner .purchase {
+  width: 200px;
+  height: 70px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgb(244, 240, 233), rgb(255, 239, 206));
+  color: black;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
+
+  flex-shrink: 0;
+  margin: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: all 0.1s ease;
+}
+.topup-window-inner .purchase:hover {
+  box-shadow: 0 3px 5px 6px rgba(0, 0, 0, 0.4);
+}
+.topup-window-inner .confirmation {
+  width: 70%;
+  height: 49%;
+  background: rgba(241, 241, 241);
+  border: 1px solid rgba(142, 70, 26);
+  border-radius: 40px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
+
+  position: absolute;
+  left: 15%;
+  z-index: 3;
+
+  padding: 150px 50px;
+
+  transition: all 0.2s ease;
+  opacity: 0;
+  transform: scale(0);
+  pointer-events: none;
+}
+.topup-window-inner .confirmation.show {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+.topup-window-inner .confirmation div {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.topup-window-inner .confirmation div .confirm {
+  font-size: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
+  background: #4caf50;
+  padding: 20px;
+}
+.topup-window-inner .confirmation div .cancel {
+  font-size: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
+  background: #e05a5a;
+  padding: 20px;
+}
+.topup-window-inner .successful {
+  width: 70%;
+  height: 49%;
+  background: rgba(241, 241, 241);
+  border: 1px solid rgba(142, 70, 26);
+  border-radius: 40px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
+
+  position: absolute;
+  left: 15%;
+  z-index: 4;
+
+  padding: 150px 50px;
+
+  transition: all 0.2s ease;
+  opacity: 0;
+  transform: scale(0);
+  pointer-events: none;
+  
+}
+.topup-window-inner .successful.show {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+.topup-window-inner .successful p {
+  text-align: center;
+  position: absolute;
+}
+.topup-window-inner .successful .close {
+  font-size: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
+  background: #4caf50;
+  padding: 20px;
+
+  position: absolute;
+  bottom: 20%;
+  left: 40%;
+}
+.topup-window-inner .confirmation div .confirm:hover,
+.topup-window-inner .confirmation div .cancel:hover,
+.topup-window-inner .successful .close:hover {
+  box-shadow: 0 3px 5px 6px rgba(0, 0, 0, 0.4);
+
+}

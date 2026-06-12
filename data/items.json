@@ -1,0 +1,276 @@
+{
+  "diamond": {
+    "name": "Diamond",
+    "rarity": "epic",
+    "image": "images/items/diamond.webp"
+  },
+  "vip-points": {
+    "name": "VIP Points",
+    "rarity": "legendary",
+    "image": "images/items/vip-points.webp"
+  },
+  "recharge-exp": {
+    "name": "Recharge EXP",
+    "rarity": "legendary",
+    "image": "images/items/recharge-exp.webp"
+  },
+  "stamina-potion": {
+    "name": "Stamina Potion",
+    "rarity": "epic",
+    "image": "images/items/"
+  },
+  "stamina-potion-l": {
+    "name": "Stamina Potion (L)",
+    "rarity": "legendary",
+    "image": "images/items/stamina-potion-l.webp"
+  },
+  "serverwide-broadcast": {
+    "name": "Sever-wide Broadcast",
+    "rarity": "legendary",
+    "image": "images/items/serverwide-broadcast.webp"
+  },
+  "meteoric-iron-core": {
+    "name": "Meteoric Iron Core",
+    "rarity": "legendary",
+    "image": "images/items/meteoric-iron-core.webp"
+  },
+  "legendary-resource-choice-chest": {
+    "name": "Legendary Resource Choice Chest",
+    "rarity": "legendary",
+    "image": "images/items/resource-choice-chest.webp"
+  },
+  "legendary-level-tie-ruby-chest": {
+    "name": "Legendary Level-tied Ruby Chest",
+    "rarity": "legendary",
+    "image": "images/items/level-tie-ruby-chest.webp"
+  },
+  "legendary-level-tie-stone-chest": {
+    "name": "Legendary Level-tied Stone Chest",
+    "rarity": "legendary",
+    "image": "images/items/level-tie-stone-chest.webp"
+  },
+  "legendary-level-tie-timber-chest": {
+    "name": "Legendary Level-tied Timber Chest",
+    "rarity": "legendary",
+    "image": "images/items/level-tie-timber-chest.webp"
+  },
+  "legendary-level-tie-meat-chest": {
+    "name": "Legendary Level-tied Meat Chest",
+    "rarity": "legendary",
+    "image": "images/items/level-tie-meat-chest.webp"
+  },
+
+  "epic-resource-choice-chest": {
+    "name": "Legendary Resource Choice Chest",
+    "rarity": "epic",
+    "image": "images/items/resource-choice-chest.webp"
+  },
+  "epic-level-tie-ruby-chest": {
+    "name": "Legendary Level-tied Ruby Chest",
+    "rarity": "epic",
+    "image": "images/items/level-tie-ruby-chest.webp"
+  },
+  "epic-level-tie-stone-chest": {
+    "name": "Legendary Level-tied Stone Chest",
+    "rarity": "epic",
+    "image": "images/items/level-tie-stone-chest.webp"
+  },
+  "epic-level-tie-timber-chest": {
+    "name": "Legendary Level-tied Timber Chest",
+    "rarity": "epic",
+    "image": "images/items/level-tie-timber-chest.webp"
+  },
+  "epic-level-tie-meat-chest": {
+    "name": "Legendary Level-tied Meat Chest",
+    "rarity": "epic",
+    "image": "images/items/level-tie-meat-chest.webp"
+  },
+
+  "rare-resource-choice-chest": {
+    "name": "Legendary Resource Choice Chest",
+    "rarity": "rare",
+    "image": "images/items/resource-choice-chest.webp"
+  },
+  "rare-level-tie-ruby-chest": {
+    "name": "Legendary Level-tied Ruby Chest",
+    "rarity": "rare",
+    "image": "images/items/level-tie-ruby-chest.webp"
+  },
+  "rare-level-tie-stone-chest": {
+    "name": "Legendary Level-tied Stone Chest",
+    "rarity": "rare",
+    "image": "images/items/level-tie-stone-chest.webp"
+  },
+  "rare-level-tie-timber-chest": {
+    "name": "Legendary Level-tied Timber Chest",
+    "rarity": "rare",
+    "image": "images/items/level-tie-timber-chest.webp"
+  },
+  "rare-level-tie-meat-chest": {
+    "name": "Legendary Level-tied Meat Chest",
+    "rarity": "rare",
+    "image": "images/items/level-tie-meat-chest.webp"
+  },
+ 
+  "scroll-seal": {
+    "name": "Scroll Seal",
+    "rarity": "legendary",
+    "image": "images/items/scroll-seal.webp"
+  },
+
+  "league-magicite": {
+    "name": "League Magicite",
+    "rarity": "rare",
+    "image": "images/items/league-magicite.webp"
+  },
+  "horde-magicite": {
+    "name": "Horde Magicite",
+    "rarity": "rare",
+    "image": "images/items/horde-magicite.webp"
+  },
+  "nature-magicite": {
+    "name": "Nature Magicite",
+    "rarity": "rare",
+    "image": "images/items/nature-magicite.webp"
+  },
+  "magic-core": {
+    "name": "Magic Core",
+    "rarity": "epic",
+    "image": "images/items/magic-core.webp"
+  },
+  "universal-speedup-5m": {
+    "name": "Universal Speed-up (5m)",
+    "rarity": "rare",
+    "image": "images/items/universal-speedup-5m.webp"
+  },
+  "universal-speedup-1h": {
+    "name": "Universal Speed-up (60m)",
+    "rarity": "epic",
+    "image": "images/items/universal-speedup-1h.webp"
+  },
+  "dragon-essence": {
+    "name": "Dragon Essence",
+    "rarity": "legendary",
+    "image": "images/items/dragon-essence.webp"
+  },
+  "dragon-crystal-dust": {
+    "name": "Dragon Crystal Dust",
+    "rarity": "legendary",
+    "image": "images/items/dragon-crystal-dust.webp"
+  },
+  "rare-pet-random-chest": {
+    "name": "Rare Pet Random Chest",
+    "rarity": "epic",
+    "image": "images/items/rare-pet-random-chest.webp"
+  },
+  "pet-food": {
+    "name": "Pet Food",
+    "rarity": "rare",
+    "image": "images/items/pet-food.webp"
+  },
+  "pet-essence": {
+    "name": "Pet Essence",
+    "rarity": "legendary",
+    "image": "images/items/pet-essence.webp"
+  },
+  "amethyst-plate": {
+    "name": "Amethyst Plate",
+    "rarity": "epic",
+    "image": "images/items/amethyst-plate.webp"
+  },
+  "gear-enhance-rune": {
+    "name": "Gear Enhance Rune",
+    "rarity": "epic",
+    "image": "images/items/gear-enhance-rune.webp"
+  },
+  "arcane-crystal": {
+    "name": "Arcane Crystal",
+    "rarity": "legendary",
+    "image": "images/items/arcane-crystal.webp"
+  },
+  "magic-stone": {
+    "name": "Magic Stone",
+    "rarity": "legendary",
+    "image": "images/items/magic-stone.webp"
+  },
+  "lv3-rune-chest": {
+    "name": "Lv.3 Rune Chest",
+    "rarity": "rare",
+    "image": "images/items/lv3-rune-chest.webp"
+  },
+  "lv5-rune-chest": {
+    "name": "Lv.5 Rune Chest",
+    "rarity": "legendary",
+    "image": "images/items/lv5-rune-chest.webp"
+  },
+  "lv5-rune-choice-chest": {
+    "name": "Lv.5 Rune Choice Chest",
+    "rarity": "legendary",
+    "image": "images/items/lv5-rune-choice-chest.webp"
+  },
+  "refined-metal": {
+    "name": "Refined Metal",
+    "rarity": "rare",
+    "image": "images/items/refined-metal.webp"
+  },
+  "magic-thread": {
+    "name": "Magic Thread",
+    "rarity": "epic",
+    "image": "images/items/magic-thread.webp"
+  },
+  "orichalcum": {
+    "name": "Orichalcum",
+    "rarity":"legendary",
+    "image": "images/items/orichalcum.webp"
+  },
+  "skill-book": {
+    "name": "Skill Book",
+    "rarity": "epic",
+    "image": "images/items/skill-book.webp"
+  },
+  "solar-gold-ingot": {
+    "name": "Solar Gold Ingot",
+    "rarity": "legendary",
+    "image": "images/items/solar-gold-ingot.webp"
+  },
+  "recruitment-token": {
+    "name": "Recruitment Token",
+    "rarity": "legendary",
+    "image": "images/items/recruitment-token.webp"
+  },
+  "arcane-source-stone": {
+    "name": "Arcane Source Stone",
+    "rarity": "mythic",
+    "image": "images/items/arcane-source-stone.webp"
+  },
+  "universal-heroic-spirit-shard": {
+    "name": "Universal Heroic Spirit Shard",
+    "rarity": "legendary",
+    "image": "images/items/universal-heroic-spirit-shard.webp"
+  },
+  "universal-exclusive-gear-shard": {
+    "name": "Universal Exclusive Gear Shard",
+    "rarity": "legendary",
+    "image": "images/items/universal-exclusive-gear-shard.webp"
+  },
+  "legendary-universal-relic-shard": {
+    "name": "Legendary Universal Relic Shard",
+    "rarity": "legendary",
+    "image": "images/items/legendary-universal-relic-shard.webp"
+  },
+  "legendary-universal-hero-shard": {
+    "name": "Legendary Universal Hero Shard",
+    "rarity": "legendary",
+    "image": "images/items/legendary-universal-hero-shard.webp"
+  },
+  "magicite-chest": {
+    "name": "Magicite Chest",
+    "rarity": "rare",
+    "image": "images/items/magicite-chest.webp"
+  },
+  "seaweed": {
+    "name": "Seaweed",
+    "rarity": "epic",
+    "image": "images/items/seaweed.webp"
+  }
+}
