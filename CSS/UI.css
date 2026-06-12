@@ -913,6 +913,5 @@ html, body {
 @media (max-width: 430px) {
   .game-screen {
     width: 400px;
-    height: 800px;
   }
 }
