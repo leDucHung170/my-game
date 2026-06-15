@@ -561,5 +561,28 @@
         "universal-speedup-5m": 20
       }
     }
+  },
+  "monthly-pass": {
+    "category": "monthly-pass",
+    "name": "Monthly Pass",
+    "cost": 329000,
+    "receive": {
+      "get-now": {
+        "diamond": 1200,
+        "queue-plus-1": 1,
+        "auto-hunt": 1,
+        "translate-this-screen-privilege": 1,
+        "double-ad-resource-privilege": 1,
+        "gathering-speed-boost": 1,
+        "marching-speed": 1
+      },
+      "daily-gift": {
+        "diamond": 80,
+        "stamina-potion-l": 2,
+        "recruitment-token": 2,
+        "universal-speedup-5m": 60,
+        "fine-iron-ingot": 200
+      }
+    }
   }
 }

@@ -160,14 +160,20 @@
   display: none;
 }
 /* Items */
-.bag-body div {
+.bag-body .item {
   width: 100px;
   height: 100px;
+
   border-radius: 20px;
+  border-width: 3px;
+  border-style: solid;
+
+  outline-width: 2px;
+  outline-style: solid;
 
   position: relative;
 }
-.bag-body div p {
+.bag-body .item p {
   font-size: 1.5rem;
   font-weight: 600;
   font-style: bold;

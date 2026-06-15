@@ -11,6 +11,7 @@
     />
     <title>Top Heroes</title>
     <!-- CSS -->
+     <link rel="icon" href="images/buttons/shop/custom-weekly-pass-char-img.png" type="image/png">
     <link rel="stylesheet" href="CSS/UI.css" />
     <link rel="stylesheet" href="CSS/GuildContent.css" />
     <link rel="stylesheet" href="CSS/MailContent.css" />
@@ -589,7 +590,7 @@
             </div>
             <!-- Items -->
             <div class="bag-body">
-              <div class="uncommon">
+              <div class="item uncommon">
                 <img
                   draggable="false"
                   class="img"
@@ -597,31 +598,29 @@
                 />
                 <p>9999</p>
               </div>
-              <div class="common"></div>
-              <div class="rare"></div>
-              <div class="epic"></div>
-              <div class="legendary"></div>
-              <div class="mythic"></div>
-              <div class="mythic"></div>
-              <div class="mythic"></div>
-              <div class="mythic"></div>
-              <div class="mythic"></div>
-              <div class="mythic"></div>
-              <div class="mythic"></div>
-              <div class="mythic"></div>
-              <div class="mythic"></div>
-              <div class="mythic"></div>
-              <div class="mythic"></div>
-              <div class="mythic"></div>
-              <div class="mythic"></div>
-              <div class="mythic"></div>
-              <div class="mythic"></div>
-              <div class="mythic"></div>
-              <div class="mythic"></div>
-              <div class="mythic"></div>
-              <div class="mythic"></div>
-              <div class="mythic"></div>
-              <div class="mythic"></div>
+              <div class="item common"></div>
+              <div class="item common"></div>
+              <div class="item common"></div>
+              <div class="item common"></div>
+              <div class="item common"></div>
+              <div class="item common"></div>
+              <div class="item common"></div>
+              <div class="item rare"></div>
+              <div class="item rare"></div>
+              <div class="item rare"></div>
+              <div class="item rare"></div>
+              <div class="item rare"></div>
+              <div class="item rare"></div>
+              <div class="item epic"></div>
+              <div class="item epic"></div>
+              <div class="item epic"></div>
+              <div class="item epic"></div>
+              <div class="item legendary"></div>
+              <div class="item legendary"></div>
+              <div class="item mythic"></div>
+              <div class="item mythic"></div>
+              <div class="item mythic"></div>
+              <div class="item mythic"></div>
             </div>
           </div>
           <div class="bag-footer"></div>
@@ -684,42 +683,42 @@
             <div class="decor-2"></div>
             <div class="resource-container">
               <div class="resource">
-                <div class="img epic">
+                <div class=" item img epic">
                   <img draggable="false" src="images/buttons/diamond.png" />
                 </div>
                 <div class="text">Available:</div>
                 <div class="number">363636</div>
               </div>
               <div class="resource">
-                <div class="img rare">
+                <div class="item img rare">
                   <img draggable="false" src="images/buttons/meat.png" />
                 </div>
                 <div class="text">Available:</div>
                 <div class="number">354M</div>
               </div>
               <div class="resource">
-                <div class="img rare">
+                <div class="item img rare">
                   <img draggable="false" src="images/buttons/wood.png" />
                 </div>
                 <div class="text">Available:</div>
                 <div class="number">354M</div>
               </div>
               <div class="resource">
-                <div class="img rare">
+                <div class="item img rare">
                   <img draggable="false" src="images/buttons/stone.png" />
                 </div>
                 <div class="text">Available:</div>
                 <div class="number">161M</div>
               </div>
               <div class="resource">
-                <div class="img epic">
+                <div class="item img epic">
                   <img draggable="false" src="images/buttons/ruby.png" />
                 </div>
                 <div class="text">Available:</div>
                 <div class="number">8.62M</div>
               </div>
               <div class="resource">
-                <div class="img epic">
+                <div class="item img epic">
                   <img
                     draggable="false"
                     src="images/buttons/nutrient-booster.png"
@@ -818,6 +817,14 @@
               />
               <div class="text">Monthly Privileges</div>
             </div>
+            <div id="diamond-store" class="section">
+              <img
+                draggable="false"
+                class="img"
+                src="images/buttons/shop/diamond-store.png"
+              />
+              <div class="text">Diamond Store</div>
+            </div>
             <div id="construction-fund" class="section">
               <img
                 draggable="false"
@@ -850,14 +857,7 @@
               />
               <div class="text">Growth Fund</div>
             </div>
-            <div id="diamond-store" class="section">
-              <img
-                draggable="false"
-                class="img"
-                src="images/buttons/shop/diamond-store.png"
-              />
-              <div class="text">Diamond Store</div>
-            </div>
+            
           </div>
           <div class="shop-window-inner">
             <!-- Daily Special -->
@@ -1042,6 +1042,23 @@
               <div class="title">Permanent Privilege</div>
               <div class="description">
                 Privileges take effect permanently after purchase
+              </div>
+              <div class="get-now">
+                <div class="title">Get Now</div>
+              </div>
+              <div class="daily-gift">
+                <div class="title">Daily Gift</div>
+              </div>
+              <div class="buy-btn"></div>
+            </div>
+            <!-- Monthly Privileges -->
+            <div
+              data-pack-id="monthly-privileges"
+              class="pack monthly-privileges"
+            >
+              <div class="title">Monthly Pass</div>
+              <div class="description">
+                Activate the Monthly Pass to enable auto-hunt mode!
               </div>
               <div class="get-now">
                 <div class="title">Get Now</div>

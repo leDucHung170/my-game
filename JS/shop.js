@@ -22,8 +22,13 @@ const diamondStoreBtn = shopSection.querySelector("#diamond-store");
 const diamondStoreContainer = shopWindow.querySelector(".diamond-store");
 const diamondStoreContent = diamondStoreContainer.querySelector(".container");
 const permanentPrivilegeBtn = shopSection.querySelector("#permanent-privilege");
-const permanentPrivilegeContainer = shopWindow.querySelector(".permanent-privilege");
-
+const permanentPrivilegeContainer = shopWindow.querySelector(
+  ".permanent-privilege",
+);
+const monthlyPrivilegesBtn = shopSection.querySelector("#monthly-privileges");
+const monthlyPrivilegesContainer = shopWindow.querySelector(
+  ".monthly-privileges",
+);
 const allSectionBtns = [
   dailySpecialBtn,
   heroicOfferBtn,
@@ -32,6 +37,7 @@ const allSectionBtns = [
   customWeeklyPassBtn,
   diamondStoreBtn,
   permanentPrivilegeBtn,
+  monthlyPrivilegesBtn,
 ];
 const allSectionContainers = [
   dailySpecialContainer,
@@ -41,6 +47,7 @@ const allSectionContainers = [
   customWeeklyPassContainer,
   diamondStoreContainer,
   permanentPrivilegeContainer,
+  monthlyPrivilegesContainer,
 ];
 
 // Load Shop data
@@ -84,10 +91,10 @@ function createReceiveHTML(receive) {
 // Diamond Store
 function renderDiamondStore() {
   const diamondPacks = Object.entries(packs).filter(
-    ([id,pack]) => pack.category === "diamond-packs"
+    ([id, pack]) => pack.category === "diamond-packs",
   );
   let html = "";
-  diamondPacks.forEach(([id,pack]) => {
+  diamondPacks.forEach(([id, pack]) => {
     const cost = format(pack.cost);
     html += `
     <div class="pack" data-pack-id="${id}">
@@ -154,9 +161,9 @@ function renderValueWeeklyPass() {
   const dailyContainer = customWeeklyPassContainer.querySelector(
     ".custom-weekly-pass .pack.silver .daily-reward .container",
   );
-const valueBuyBtn = customWeeklyPassContainer.querySelector(
-  ".custom-weekly-pass .pack.silver .buy-btn",
-);
+  const valueBuyBtn = customWeeklyPassContainer.querySelector(
+    ".custom-weekly-pass .pack.silver .buy-btn",
+  );
   instantlyContainer.innerHTML = instantlyHTML;
   dailyContainer.innerHTML = dailyHTML;
   valueBuyBtn.textContent = cost;
@@ -189,8 +196,25 @@ function renderPermanentPrivilege() {
   const cost = format(pack.cost);
 
   const getNowContainer = permanentPrivilegeContainer.querySelector(".get-now");
-  const dailyGiftContainer = permanentPrivilegeContainer.querySelector(".daily-gift");
+  const dailyGiftContainer =
+    permanentPrivilegeContainer.querySelector(".daily-gift");
   const buyBtn = permanentPrivilegeContainer.querySelector(".buy-btn");
+
+  getNowContainer.innerHTML += getNowHTML;
+  dailyGiftContainer.innerHTML += dailyGiftHTML;
+  buyBtn.textContent = cost;
+}
+function renderMonthlyPrivileges() {
+  const pack = packs["monthly-pass"];
+
+  const getNowHTML = createReceiveHTML(pack.receive["get-now"]);
+  const dailyGiftHTML = createReceiveHTML(pack.receive["daily-gift"]);
+  const cost = format(pack.cost);
+
+  const getNowContainer = monthlyPrivilegesContainer.querySelector(".get-now");
+  const dailyGiftContainer =
+    monthlyPrivilegesContainer.querySelector(".daily-gift");
+  const buyBtn = monthlyPrivilegesContainer.querySelector(".buy-btn");
 
   getNowContainer.innerHTML += getNowHTML;
   dailyGiftContainer.innerHTML += dailyGiftHTML;
@@ -331,7 +355,6 @@ function dailyPacks() {
   dailyPackContainer.classList.add("show");
 }
 function weeklyPacks() {
-
   weeklyPackBtn.classList.add("selected");
   weeklyPackContainer.classList.add("show");
 }
@@ -347,6 +370,10 @@ function permanentPrivilege() {
   permanentPrivilegeBtn.classList.add("selected");
   permanentPrivilegeContainer.classList.add("show");
 }
+function monthlyPrivileges() {
+  monthlyPrivilegesBtn.classList.add("selected");
+  monthlyPrivilegesContainer.classList.add("show");
+}
 // EventListener
 shopBtn.addEventListener("click", () => {
   if (!isShopRendered) {
@@ -356,7 +383,7 @@ shopBtn.addEventListener("click", () => {
     renderDeluxeWeeklyPass();
     renderPermanentPrivilege();
     renderDiamondStore();
-
+    renderMonthlyPrivileges();
     isShopRendered = true;
   }
   openShop();
@@ -473,5 +500,11 @@ permanentPrivilegeBtn.addEventListener("click", () => {
   unselected();
   setTimeout(() => {
     permanentPrivilege();
+  }, 100);
+});
+monthlyPrivilegesBtn.addEventListener("click", () => {
+  unselected();
+  setTimeout(() => {
+    monthlyPrivileges();
   }, 100);
 });

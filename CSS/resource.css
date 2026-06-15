@@ -126,7 +126,13 @@
 .resource-container .resource .img {
   width: 80px;
   height: 80px;
+
   border-radius: 20px;
+  border-style: solid;
+  border-width: 3px;
+
+  outline-width: 2px;
+  outline-style: solid;
 
   position: absolute;
   top: 16px;

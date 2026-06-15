@@ -1593,8 +1593,8 @@
   box-shadow: 0 3px rgb(101, 69, 57);
 
   position: relative;
-
-}.permanent-privilege .get-now  .item .img {
+}
+.permanent-privilege .get-now .item .img {
   width: 50px;
   height: 50px;
 
@@ -1673,8 +1673,8 @@
   box-shadow: 0 3px rgb(101, 69, 57);
 
   position: relative;
-
-}.permanent-privilege .daily-gift  .item .img {
+}
+.permanent-privilege .daily-gift .item .img {
   width: 50px;
   height: 50px;
 
@@ -1723,6 +1723,249 @@
     1px 1px 1px rgba(142, 70, 26);
 }
 .permanent-privilege .buy-btn:active {
+  background: rgb(206, 126, 45);
+  transform: scale(0.95);
+}
+
+/* Monthly Privileges */
+.monthly-privileges {
+  height: 870px;
+  width: 544px;
+  background-image: url(../images/buttons/shop/monthly-privileges/background.webp);
+  border-radius: 10px;
+
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+
+  transition: all 0.2s ease;
+  transform: translateY(-100px);
+  opacity: 0;
+  pointer-events: none;
+}
+.monthly-privileges.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.monthly-privileges > .title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  font-style: bold;
+  text-shadow:
+    -1px -1px 1px rgb(0, 0, 0),
+    1px -1px 1px rgb(0, 0, 0),
+    -1px 1px 1px rgb(0, 0, 0),
+    1px 1px 1px rgb(0, 0, 0);
+  text-align: center;
+
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.monthly-privileges .description {
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-style: bold;
+  text-shadow:
+    -1px -1px 1px rgb(0, 0, 0),
+    1px -1px 1px rgb(0, 0, 0),
+    -1px 1px 1px rgb(0, 0, 0),
+    1px 1px 1px rgb(0, 0, 0);
+
+  position: absolute;
+  top: 50px;
+  left: 10px;
+  width: 350px;
+}
+.monthly-privileges .get-now {
+  width: 500px;
+  height: 110px;
+
+  border-radius: 10px;
+  background: rgba(253, 246, 231);
+  border: 3px solid rgba(101, 69, 57);
+
+  position: absolute;
+  top: 480px;
+  left: 20px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+
+  padding: 0px 10px;
+
+  padding-bottom: 10px;
+}
+.monthly-privileges .get-now .title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-style: bold;
+  text-shadow:
+    -1px -1px 1px rgb(0, 0, 0),
+    1px -1px 1px rgb(0, 0, 0),
+    -1px 1px 1px rgb(0, 0, 0),
+    1px 1px 1px rgb(0, 0, 0);
+
+  width: 200px;
+  height: 30px;
+  background: rgba(242, 116, 82);
+  border: 1px solid rgba(101, 69, 57);
+  box-shadow: 0 1px rgb(101, 69, 57);
+  border-radius: 4px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  top: -15px;
+  left: 150px;
+}
+.monthly-privileges .get-now .item {
+  width: 60px;
+  height: 60px;
+
+  border-radius: 10px;
+  border-width: 3px;
+  border-style: solid;
+
+  outline-width: 1px;
+  outline-style: solid;
+  box-shadow: 0 3px rgb(101, 69, 57);
+
+  position: relative;
+}
+.monthly-privileges .get-now .item .img {
+  width: 50px;
+  height: 50px;
+
+  position: absolute;
+  top: 2px;
+  left: 2px;
+}
+.monthly-privileges .get-now .item .amount {
+  font-size: 1rem;
+  font-weight: 600;
+  font-style: bold;
+  text-shadow:
+    -1px -1px 1px rgb(0, 0, 0),
+    1px -1px 1px rgb(0, 0, 0),
+    -1px 1px 1px rgb(0, 0, 0),
+    1px 1px 1px rgb(0, 0, 0);
+
+  position: absolute;
+  bottom: 0;
+  right: 2px;
+}
+.monthly-privileges .daily-gift {
+  width: 500px;
+  height: 110px;
+
+  border-radius: 10px;
+  background: rgba(253, 246, 231);
+  border: 3px solid rgba(101, 69, 57);
+
+  position: absolute;
+  top: 620px;
+  left: 20px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+
+  padding: 0px 60px;
+  padding-bottom: 10px;
+}
+.monthly-privileges .daily-gift .title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-style: bold;
+  text-shadow:
+    -1px -1px 1px rgb(0, 0, 0),
+    1px -1px 1px rgb(0, 0, 0),
+    -1px 1px 1px rgb(0, 0, 0),
+    1px 1px 1px rgb(0, 0, 0);
+
+  width: 200px;
+  height: 30px;
+  background: rgba(90, 153, 217);
+  border: 1px solid rgba(101, 69, 57);
+  box-shadow: 0 1px rgba(69, 114, 161);
+  border-radius: 4px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  top: -15px;
+  left: 150px;
+}
+.monthly-privileges .daily-gift .item {
+  width: 60px;
+  height: 60px;
+
+  border-radius: 10px;
+  border-width: 3px;
+  border-style: solid;
+
+  outline-width: 1px;
+  outline-style: solid;
+  box-shadow: 0 3px rgb(101, 69, 57);
+
+  position: relative;
+}
+.monthly-privileges .daily-gift .item .img {
+  width: 50px;
+  height: 50px;
+
+  position: absolute;
+  top: 2px;
+  left: 2px;
+}
+.monthly-privileges .daily-gift .item .amount {
+  font-size: 1rem;
+  font-weight: 600;
+  font-style: bold;
+  text-shadow:
+    -1px -1px 1px rgb(0, 0, 0),
+    1px -1px 1px rgb(0, 0, 0),
+    -1px 1px 1px rgb(0, 0, 0),
+    1px 1px 1px rgb(0, 0, 0);
+
+  position: absolute;
+  bottom: 0;
+  right: 2px;
+}
+.monthly-privileges .buy-btn {
+  width: 200px;
+  height: 70px;
+  border-radius: 10px;
+  background: rgba(253, 162, 71);
+  border: 1px solid rgba(190, 129, 57);
+  outline: 1px solid rgba(198, 105, 49);
+  box-shadow: 0px 6px 5px 0 rgba(198, 105, 49);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  left: 172px;
+  bottom: 40px;
+
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-style: bold;
+  text-shadow:
+    -1px -1px 1px rgba(142, 70, 26),
+    1px -1px 1px rgba(142, 70, 26),
+    -1px 1px 1px rgba(142, 70, 26),
+    1px 1px 1px rgba(142, 70, 26);
+}
+.monthly-privileges .buy-btn:active {
   background: rgb(206, 126, 45);
   transform: scale(0.95);
 }

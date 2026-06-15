@@ -173,6 +173,11 @@
     "rarity": "legendary",
     "image": "images/items/pet-essence.webp"
   },
+  "fine-iron-ingot": {
+    "name": "Fine Iron Ingot",
+    "rarity":"rare",
+    "image":"images/items/fine-iron-ingot.webp"
+  },
   "amethyst-plate": {
     "name": "Amethyst Plate",
     "rarity": "epic",
@@ -292,5 +297,35 @@
     "name": "Auto Research Queue Privilege",
     "rarity": "legendary",
     "image": "images/items/auto-research-queue-privilege.webp"
+  },
+  "queue-plus-1": {
+    "name": "Queue +1",
+    "rarity": "legendary",
+    "image": "images/items/queue-plus-1.webp"
+  },
+  "auto-hunt": {
+    "name": "Auto-Hunt",
+    "rarity": "legendary",
+    "image": "images/items/auto-hunt.webp"
+  },
+  "translate-this-screen-privilege": {
+    "name": "Translate This Screen Privilege",
+    "rarity": "legendary",
+    "image":"images/items/translate-this-screen-privilege.webp"
+  },
+  "double-ad-resource-privilege": {
+    "name": "Double Ad Resource Privilege",
+    "rarity": "legendary",
+    "image": "images/items/double-ad-resource-privilege.webp"
+  },
+  "gathering-speed-boost": {
+    "name": "Gathering Speed Boost",
+    "rarity": "legendary",
+    "image": "images/items/gathering-speed-boost.webp"
+  },
+  "marching-speed": {
+    "name": "Marching Speed (World Map Mobs)",
+    "rarity": "legendary",
+    "image": "images/items/marching-speed.webp"
   }
 }

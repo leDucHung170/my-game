@@ -248,5 +248,11 @@
 .hero-container .hero {
  width: 120px;
  height: 190px;
+
  border-radius: 20px;
+ border-style: solid;
+ border-width: 3px;
+
+ outline-style: solid;
+ outline-width: 1px;
 }
