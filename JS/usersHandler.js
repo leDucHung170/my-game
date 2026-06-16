@@ -144,5 +144,5 @@ document.addEventListener("keydown", (e) => {
     return;
   }
   if (e.key == "b") {
-  }
+   console.log(localStorage.getItem("users"))}
 });
