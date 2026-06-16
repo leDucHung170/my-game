@@ -26,7 +26,4 @@ document.addEventListener("keydown", (e) => {
   if (e.key == "p") {
     localStorage.clear();
   }
-  if (e.key == "b") {
-    console.log(goldBlockPacks);
-  }
 })
