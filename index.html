@@ -11,7 +11,11 @@
     />
     <title>Top Heroes</title>
     <!-- CSS -->
-     <link rel="icon" href="images/buttons/shop/custom-weekly-pass-char-img.png" type="image/png">
+    <link
+      rel="icon"
+      href="images/buttons/shop/custom-weekly-pass-char-img.png"
+      type="image/png"
+    />
     <link rel="stylesheet" href="CSS/UI.css" />
     <link rel="stylesheet" href="CSS/GuildContent.css" />
     <link rel="stylesheet" href="CSS/MailContent.css" />
@@ -22,6 +26,7 @@
     <link rel="stylesheet" href="CSS/questContent.css" />
     <link rel="stylesheet" href="CSS/vipContent.css" />
     <link rel="stylesheet" href="CSS/topupCenter.css" />
+    <link rel="stylesheet" href="CSS/userInformation.css" />
   </head>
 
   <body>
@@ -188,7 +193,7 @@
               class="img"
               src="images/buttons/gold-block.png"
             />
-            <div class="text">4050.0</div>
+            <div class="text">0</div>
           </div>
         </div>
         <!-- Queue -->
@@ -218,6 +223,21 @@
               <img draggable="false" class="img" src="" />
               <div class="text">Idle</div>
             </div>
+          </div>
+        </div>
+      </div>
+      <!-- User Information -->
+      <div class="user-information-overlay">
+        <div class="user-information-window">
+          <h2>Lord Details</h2>
+          <div class="information-container">
+            <div class="username-container">
+              <div class="username">Panda</div>
+              <img draggable="false" class="settings" src="images/buttons/rename.webp"/>
+            </div>
+            <div class="server">Server: <span>10238</span></div>
+            <div class="influence">Influence: <span>104M</span></div>
+            <div class="guild">Guild: <span>[CnC]CrimsonCreed</span></div>
           </div>
         </div>
       </div>
@@ -582,46 +602,14 @@
             <div class="decor-2"></div>
             <!-- Category -->
             <div class="bag-category">
-              <div class="item">Item</div>
-              <div class="resource">Resource</div>
-              <div class="shard">Shard</div>
-              <div class="gear">Gear</div>
-              <div class="decor">Decor</div>
+              <div id="item" class="item">Item</div>
+              <div id="resource" class="resource">Resource</div>
+              <div id="shard" class="shard">Shard</div>
+              <div id="gear" class="gear">Gear</div>
+              <div id="decor" class="decor">Decor</div>
             </div>
             <!-- Items -->
-            <div class="bag-body">
-              <div class="item uncommon">
-                <img
-                  draggable="false"
-                  class="img"
-                  src="images/buttons/diamond.png"
-                />
-                <p>9999</p>
-              </div>
-              <div class="item common"></div>
-              <div class="item common"></div>
-              <div class="item common"></div>
-              <div class="item common"></div>
-              <div class="item common"></div>
-              <div class="item common"></div>
-              <div class="item common"></div>
-              <div class="item rare"></div>
-              <div class="item rare"></div>
-              <div class="item rare"></div>
-              <div class="item rare"></div>
-              <div class="item rare"></div>
-              <div class="item rare"></div>
-              <div class="item epic"></div>
-              <div class="item epic"></div>
-              <div class="item epic"></div>
-              <div class="item epic"></div>
-              <div class="item legendary"></div>
-              <div class="item legendary"></div>
-              <div class="item mythic"></div>
-              <div class="item mythic"></div>
-              <div class="item mythic"></div>
-              <div class="item mythic"></div>
-            </div>
+            <div class="bag-body"></div>
           </div>
           <div class="bag-footer"></div>
         </div>
@@ -683,7 +671,7 @@
             <div class="decor-2"></div>
             <div class="resource-container">
               <div class="resource">
-                <div class=" item img epic">
+                <div class="item img epic">
                   <img draggable="false" src="images/buttons/diamond.png" />
                 </div>
                 <div class="text">Available:</div>
@@ -757,6 +745,17 @@
       </div>
       <!-- Shop -->
       <div class="shop-overlay">
+        <div class="confirmation-overlay">
+        <div class="confirmation">
+          <h2>Gold Block Confirmation</h2>
+          <div class="inner">
+            <p>This payment will consume Gold Blocks, please confirm</p>
+            <div class="cost">25000</div>
+            <div class="cancel">Cancel</div>
+            <div class="confirm">Confirm</div>
+          </div>
+        </div>
+        </div>
         <div class="shop-window">
           <h2>Shop</h2>
           <div class="shop-window-header"></div>
@@ -857,7 +856,6 @@
               />
               <div class="text">Growth Fund</div>
             </div>
-            
           </div>
           <div class="shop-window-inner">
             <!-- Daily Special -->
@@ -1136,30 +1134,8 @@
               3. You cannot use Gold Blocks to purchase Packs when your balance
               is insufficient.
             </p>
-            <p class="amount">Gold Blocks: <span>4050.0</span> ₫</p>
-            <div class="purchase-container">
-              <div id="25000" class="purchase">25.000 ₫</div>
-              <div id="49000" class="purchase">49.000 ₫</div>
-              <div id="50000" class="purchase">50.000 ₫</div>
-              <div id="73000" class="purchase">73.000 ₫</div>
-              <div id="100000" class="purchase">100.000 ₫</div>
-              <div id="119000" class="purchase">119.000 ₫</div>
-              <div id="149000" class="purchase">149.000 ₫</div>
-              <div id="200000" class="purchase">200.000 ₫</div>
-              <div id="229000" class="purchase">229.000 ₫</div>
-              <div id="329000" class="purchase">329.000 ₫</div>
-              <div id="449000" class="purchase">449.000 ₫</div>
-              <div id="500000" class="purchase">500.000 ₫</div>
-              <div id="699000" class="purchase">699.000 ₫</div>
-              <div id="1000000" class="purchase">1.000.000 ₫</div>
-              <div id="1199000" class="purchase">1.199.000 ₫</div>
-              <div id="2000000" class="purchase">2.000.000 ₫</div>
-              <div id="2399000" class="purchase">2.399.000 ₫</div>
-              <div id="5000000" class="purchase">5.000.000 ₫</div>
-              <div id="10000000" class="purchase">10.000.000 ₫</div>
-              <div id="11990000" class="purchase">11.990.000 ₫</div>
-              <div id="14990000" class="purchase">14.990.000 ₫</div>
-            </div>
+            <p class="amount">Gold Blocks: <span>0</span></p>
+            <div class="purchase-container"></div>
             <div class="confirmation">
               <p>Are you sure you want to make this purchase?</p>
               <div>
@@ -1195,5 +1171,6 @@
   <script src="JS/quest.js"></script>
   <script src="JS/vip.js"></script>
   <script src="JS/topupCenter.js"></script>
+  <script src="JS/userInformation.js"></script>
   <script src="JS/usersHandler.js"></script>
 </html>

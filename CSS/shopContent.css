@@ -41,6 +41,111 @@
   pointer-events: auto;
   transform: scale(1);
 }
+.shop-overlay .confirmation-overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+
+  position: absolute;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  opacity: 0;
+  pointer-events: none;
+}
+.shop-overlay .confirmation-overlay.show {
+  pointer-events: auto;
+  opacity: 1;
+}
+.shop-overlay .confirmation {
+  width: 700px;
+  height: 400px;
+  background: rgba(157, 85, 57);
+  border: 4px solid rgba(189, 103, 72);
+  outline: 2px solid black;
+  border-radius: 20px;
+  box-shadow: var(--box-shadow);
+
+  position: absolute;
+  z-index: 2;
+  transition: all 0.1s ease;
+  transform: scale(0);
+  opacity: 0;
+  pointer-events: none;
+}
+.shop-overlay .confirmation.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1);
+}
+.shop-overlay .confirmation > h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  font-style: bold;
+  text-shadow:
+    -1px -1px 1px rgba(142, 70, 26),
+    1px -1px 1px rgba(142, 70, 26),
+    -1px 1px 1px rgba(142, 70, 26),
+    1px 1px 1px rgba(142, 70, 26);
+
+  text-align: center;
+}
+.shop-overlay .confirmation .inner {
+  width: 680px;
+  height: 300px;
+  border-radius: 10px;
+  background: linear-gradient(200deg, rgba(239, 227, 211), rgba(225, 203, 181));
+
+  position: absolute;
+  left: 6px;
+}
+.shop-overlay .confirmation .inner > p {
+  font-size: 1.8rem;
+  font-weight: 600;
+  font-style: bold;
+  color: rgba(142, 70, 26);
+  padding: 20px;
+  padding-bottom: 0;
+}
+.shop-overlay .confirmation .cost {
+  font-size: 1.8rem;
+  font-weight: 600;
+  font-style: bold;
+  color: rgba(142, 70, 26);
+  text-align: center;
+}
+.shop-overlay .confirmation .cancel {
+  font-size: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
+  background: #e05a5a;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+
+  position: absolute;
+  left: 100px;
+}
+
+.shop-overlay .confirmation .confirm {
+  font-size: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
+  background: #4caf50;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+
+
+  position: absolute;
+  right: 100px;
+}
+.shop-overlay .confirmation .cancel:hover,
+.shop-overlay .confirmation .confirm:hover {
+  box-shadow: 0 3px 5px 6px rgba(0, 0, 0, 0.4);
+}
 .shop-window h2 {
   font-size: 1.8rem;
   font-weight: 600;

@@ -27,6 +27,6 @@ document.addEventListener("keydown", (e) => {
     localStorage.clear();
   }
   if (e.key == "b") {
-    console.log(renderPermanentPrivilege());
+    console.log(goldBlockPacks);
   }
 })

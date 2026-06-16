@@ -62,7 +62,7 @@ async function loadPacks() {
   items = await itemsResponse.json();
 }
 loadPacks();
-
+let chosenPack = null;
 let isShopRendered = false;
 // Render
 function createReceiveHTML(receive) {
@@ -508,3 +508,81 @@ monthlyPrivilegesBtn.addEventListener("click", () => {
     monthlyPrivileges();
   }, 100);
 });
+
+// Buy Packs
+const shopConfirmationOverlay = shopOverlay.querySelector(
+  ".confirmation-overlay",
+);
+const shopConfirmWindow = shopOverlay.querySelector(".confirmation");
+const consume = shopConfirmWindow.querySelector(".inner .cost");
+const shopCancelBtn = shopConfirmWindow.querySelector(".cancel");
+const shopConfirmBtn = shopConfirmWindow.querySelector(".confirm");
+
+function shopConfirmation() {
+  shopConfirmationOverlay.classList.add("show");
+  shopConfirmWindow.classList.add("show");
+}
+function shopCancel() {
+  shopConfirmationOverlay.classList.remove("show");
+  shopConfirmWindow.classList.remove("show");
+  chosenPack = null;
+}
+function shopConfirm() {
+  const packId = chosenPack.dataset.packId;
+  const pack = packs[packId];
+  if (!pack) {
+    return;
+  }
+  const username = document
+    .querySelector(".user-information-window .information-container .username")
+    .textContent.toLowerCase();
+  const users = JSON.parse(localStorage.getItem("users"));
+  buyPack(username, packId);
+  shopConfirmWindow.classList.remove("show");
+  shopConfirmationOverlay.classList.remove("show");
+  chosenPack = null;
+}
+shopConfirmBtn.addEventListener("click", shopConfirm);
+shopCancelBtn.addEventListener("click", shopCancel);
+shopWindow.addEventListener("click", (e) => {
+  const users = JSON.parse(localStorage.getItem("users"));
+
+  const username = document
+    .querySelector(".user-information-window .information-container .username")
+    .textContent.toLowerCase();
+  if (e.target.classList == "buy-btn") {
+    chosenPack = e.target.closest(".pack");
+    const pack = packs[chosenPack.dataset.packId];
+    consume.textContent = format(pack.cost);
+    shopConfirmBtn.style.background = "";
+    shopConfirmBtn.style.pointerEvents = "auto";
+    consume.style.color = "";
+    if (users[username]["goldBlock"] < pack.cost) {
+      shopConfirmBtn.style.background = "grey";
+      shopConfirmBtn.style.pointerEvents = "none";
+      consume.style.color = "red";
+    }
+    shopConfirmation();
+    return;
+  }
+});
+function addItem(username, itemId, amount) {
+  const users = JSON.parse(localStorage.getItem("users"));
+  const items = users[username].item;
+  if (items[itemId]) {
+    items[itemId] += amount;
+  } else {
+    items[itemId] = amount;
+  }
+
+  localStorage.setItem("users", JSON.stringify(users));
+}
+function buyPack(username, packId) {
+  const pack = packs[packId];
+  const packCost = pack.cost;
+  const receives = pack.receive;
+  Object.entries(receives).map(([itemId, amount]) => {
+    addItem(username, itemId, amount);
+  });
+  spendGoldBlock(username, packCost);
+}

@@ -1,7 +1,133 @@
 {
+  "gold-block-x25000": {
+    "category": "gold-block-packs",
+    "name": "25.000 ₫",
+    "cost": 25000,
+    "receive": 25000
+  },
+  "gold-block-x49000": {
+    "category": "gold-block-packs",
+    "name": "49.000 ₫",
+    "cost": 49000,
+    "receive": 49000
+  },
+  "gold-block-x50000": {
+    "category": "gold-block-packs",
+    "name": "25.000 ₫",
+    "cost": 50000,
+    "receive": 50000
+  },
+  "gold-block-x73000": {
+    "category": "gold-block-packs",
+    "name": "73.000 ₫",
+    "cost": 73000,
+    "receive": 73000
+  },
+  "gold-block-x100000": {
+    "category": "gold-block-packs",
+    "name": "100.000 ₫",
+    "cost": 100000,
+    "receive": 100000
+  },
+  "gold-block-x119000": {
+    "category": "gold-block-packs",
+    "name": "119.000 ₫",
+    "cost": 119000,
+    "receive": 119000
+  },
+  "gold-block-x149000": {
+    "category": "gold-block-packs",
+    "name": "149.000 ₫",
+    "cost": 149000,
+    "receive": 149000
+  },
+  "gold-block-x200000": {
+    "category": "gold-block-packs",
+    "name": "200.000 ₫",
+    "cost": 200000,
+    "receive": 200000
+  },
+  "gold-block-x229000": {
+    "category": "gold-block-packs",
+    "name": "229.000 ₫",
+    "cost": 229000,
+    "receive": 229000
+  },
+  "gold-block-x329000": {
+    "category": "gold-block-packs",
+    "name": "329.000 ₫",
+    "cost": 329000,
+    "receive": 329000
+  },
+  "gold-block-x449000": {
+    "category": "gold-block-packs",
+    "name": "449.000 ₫",
+    "cost": 449000,
+    "receive": 449000
+  },
+  "gold-block-x500000": {
+    "category": "gold-block-packs",
+    "name": "500.000 ₫",
+    "cost": 500000,
+    "receive": 500000
+  },
+  "gold-block-x699000": {
+    "category": "gold-block-packs",
+    "name": "699.000 ₫",
+    "cost": 699000,
+    "receive": 699000
+  },
+  "gold-block-x1000000": {
+    "category": "gold-block-packs",
+    "name": "1.000.000 ₫",
+    "cost": 1000000,
+    "receive": 1000000
+  },
+  "gold-block-x1199000": {
+    "category": "gold-block-packs",
+    "name": "1.199.000 ₫",
+    "cost": 1199000,
+    "receive": 1199000
+  },
+  "gold-block-x2000000": {
+    "category": "gold-block-packs",
+    "name": "2.000.000 ₫",
+    "cost": 2000000,
+    "receive": 2000000
+  },
+  "gold-block-x2399000": {
+    "category": "gold-block-packs",
+    "name": "2.399.000 ₫",
+    "cost": 2399000,
+    "receive": 2399000
+  },
+  "gold-block-x5000000": {
+    "category": "gold-block-packs",
+    "name": "5.000.000 ₫",
+    "cost": 5000000,
+    "receive": 5000000
+  },
+  "gold-block-x10000000": {
+    "category": "gold-block-packs",
+    "name": "10.000.000 ₫",
+    "cost": 10000000,
+    "receive": 10000000
+  },
+  "gold-block-x11990000": {
+    "category": "gold-block-packs",
+    "name": "11.990.000 ₫",
+    "cost": 11990000,
+    "receive": 11990000
+  },
+  "gold-block-x14990000": {
+    "category": "gold-block-packs",
+    "name": "14.990.000 ₫",
+    "cost": 14990000,
+    "receive": 14990000
+  },
   "diamond-x80": {
     "category": "diamond-packs",
-    "name":"Diamond x80",
+    "name": "Diamond x80",
     "image": "images/buttons/shop/diamond-store/pack-1.png",
     "cost": 25000,
     "receive": 80

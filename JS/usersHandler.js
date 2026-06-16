@@ -25,6 +25,10 @@ const users = {
       dragonEssence: 36000000000,
       dragonDust: 36000,
     },
+
+    item: {
+      "golden-chest": 1
+    },
   },
 };
 
@@ -50,6 +54,7 @@ function calculatingNumber(number) {
 
   return num;
 }
+
 function validate(name) {
   // User data
   const users = JSON.parse(localStorage.getItem("users"));
@@ -124,14 +129,14 @@ function validate(name) {
   console.log(calculatingNumber(uInfluence));
   stamina.textContent = uStamina;
   vipLv.textContent = uVipLv;
-  goldBlock.textContent = uGoldBLock;
+  goldBlock.textContent = format(uGoldBLock);
   guildName.textContent = uGName;
   guildInfluence.textContent = calculatingNumber(uGInfluence);
   guildLanguage.textContent = uGLanguage;
-  guildMembers.textContent =uGMembers;
+  guildMembers.textContent = uGMembers;
   declaration.textContent = uGDeclare;
 }
-
+validate("panda");
 document.addEventListener("keydown", (e) => {
   console.log(e.key);
   if (e.key == " ") {
@@ -139,6 +144,5 @@ document.addEventListener("keydown", (e) => {
     return;
   }
   if (e.key == "b") {
-    calculatingNumber(3600000000);
   }
 });
