@@ -129,7 +129,7 @@ function validate(name) {
   console.log(calculatingNumber(uInfluence));
   stamina.textContent = uStamina;
   vipLv.textContent = uVipLv;
-  goldBlock.textContent = format(uGoldBLock);
+  goldBlock.textContent = calculatingNumber(uGoldBLock);
   guildName.textContent = uGName;
   guildInfluence.textContent = calculatingNumber(uGInfluence);
   guildLanguage.textContent = uGLanguage;
