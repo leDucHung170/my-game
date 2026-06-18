@@ -568,12 +568,20 @@ shopWindow.addEventListener("click", (e) => {
 });
 function addItem(username, itemId, amount) {
   const users = JSON.parse(localStorage.getItem("users"));
-  const items = users[username].item;
-  if (items[itemId]) {
-    items[itemId] += amount;
-  } else {
-    items[itemId] = amount;
+  const bag = users[username].bag;
+  const category = items[itemId].category;
+
+  // In case category doesn't exist
+  if (!bag[category]) {
+    bag[category] = {};
+
   }
+  // In case item doesn't exist
+  if (!bag[category][itemId]) {
+    bag[category][itemId] = 0;
+  }
+  // Add item
+  bag[category][itemId] += amount;
 
   localStorage.setItem("users", JSON.stringify(users));
 }

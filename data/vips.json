@@ -1,8 +1,10 @@
 {
+  
   "vip-1": {
     "name": "VIP 1 Privileges",
     "class": "vip one",
     "cost": 6,
+    "nextLevel": 30,
     "privileges": {
       "All Troops Resource Load": "3%",
       "Resource Gathering Speed Boost": "3%",
@@ -15,6 +17,7 @@
     "name": "VIP 2 Privileges",
     "class": "vip two",
     "cost": 30,
+    "nextLevel": 100,
     "privileges": {
       "Stamina Recover Speed": "3%",
       "All Troops Resource Load": "7%",
@@ -28,6 +31,7 @@
     "name": "VIP 3 Privileges",
     "class": "vip three",
     "cost": 100,
+    "nextLevel": 300,
     "privileges": {
       "Expedition Hall Reward Increase": "5%",
       "Daily Free Recruits (Max 2)": 1,
@@ -44,6 +48,7 @@
     "name": "VIP 4 Privileges",
     "class": "vip four",
     "cost": 300,
+    "nextLevel": 500,
     "privileges": {
       "Stamina Cap": 10,
       "Batch conduct Multiple non-combat Bounty Quests": 1,
@@ -62,6 +67,7 @@
     "name": "VIP 5 Privileges",
     "class": "vip five",
     "cost": 500,
+    "nextLevel": 1000,
     "privileges": {
       "Construction Speed": "5%",
       "PvE Marching Speed Boost": "5%",
@@ -84,6 +90,7 @@
     "name": "VIP 6 Privileges",
     "class": "vip six",
     "cost": 1000,
+    "nextLevel": 3000,
     "privileges": {
       "Healing Speed": "2%",
       "Soldier Training Speed": "2%",
@@ -108,6 +115,7 @@
     "name": "VIP 7 Privileges",
     "class": "vip seven",
     "cost": 3000,
+    "nextLevel": 6000,
     "privileges": {
       "Tech Research Speed": "2%",
       "Auto-Translate Privilege": 1,
@@ -134,6 +142,7 @@
     "name": "VIP 8 Privileges",
     "class": "vip eight",
     "cost": 6000,
+    "nextLevel": 10000,
     "privileges": {
       "HP of All Soldiers": "5%",
       "Recruit 100 times to buy a Legendary Hero (67% discount)": 1,
@@ -164,6 +173,7 @@
     "name": "VIP 9 Privileges",
     "class": "vip nine",
     "cost": 10000,
+    "nextLevel": 30000,
     "privileges": {
       "Quick Sweep cleared Dark Legion challenges (Available after entering the Frozen Flame season)": 1,
       "Hospital Capacity": 100,
@@ -197,6 +207,7 @@
     "name": "VIP 10 Privileges",
     "class": "vip ten",
     "cost": 30000,
+    "nextLevel": 50000,
     "privileges": {
       "Auto-join Wandering Monster Rallies (Available in the Ember of the Frozen Flame Season)": 1,
       "Soldier Capacity (each faction)": 100,
@@ -233,6 +244,7 @@
     "class": "vip eleven",
 
     "cost": 50000,
+    "nextLevel": 80000,
     "privileges": {
       "HP of All Soldiers": "8%",
       "Construction Speed": "30%",
@@ -268,6 +280,7 @@
     "name": "VIP 12 Privileges",
     "class": "vip twelve",
     "cost": 80000,
+    "nextLevel": 120000,
     "privileges": {
       "March Size": 20,
       "HP of All Soldiers": "9%",
@@ -304,6 +317,7 @@
     "name": "VIP 13 Privileges",
     "class": "vip thirdteen",
     "cost": 120000,
+    "nextLevel": 160000,
     "privileges": {
       "Your Soldiers' Wounded Ratio Decrease ( On Defensive)": "5%",
       "March Size": 20,
@@ -341,6 +355,7 @@
     "name": "VIP 14 Privileges",
     "class": "vip fourteen",
     "cost": 160000,
+    "nextLevel": 200000,
     "privileges": {
       "Your Soldiers' Wounded Ratio Decrease ( On Defensive)": "5%",
       "March Size": 40,
@@ -378,6 +393,7 @@
     "name": "VIP 15 Privileges",
     "class": "vip fifteen",
     "cost": 200000,
+    "nextLevel": 300000,
     "privileges": {
       "March Size": 60,
       "Your Soldiers' Wounded Ratio Decrease ( On Defensive)": "10%",

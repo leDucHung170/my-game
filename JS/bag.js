@@ -4,6 +4,12 @@ const bagOverlay = document.querySelector(".bag-overlay");
 const bagWindow = document.querySelector(".bag-window");
 const bagContainer = document.querySelector(".bag-body");
 const bagCategory = document.querySelector(".bag-category");
+const informationContainer = document.querySelector(
+  ".item-information-container",
+);
+const informationContainerOverlay = document.querySelector(
+  ".item-information-overlay",
+);
 
 let isDraggingBagContainer = false;
 let hasBagContainerDragged = false;
@@ -40,12 +46,42 @@ function dragBagContainer(e) {
 function stopDragBagContainer(e) {
   isDraggingBagContainer = false;
 }
+function openItemInformation() {
+  informationContainer.classList.add("show");
+  informationContainerOverlay.classList.add("show");
+}
+function closeItemInformation() {
+  informationContainer.classList.remove("show");
+  informationContainerOverlay.classList.remove("show");
+}
+function renderItemInformation(username, itemId) {
+  const inner = informationContainer.querySelector(".inner");
+  const item = items[itemId];
+  const category = item.category;
+  const users = JSON.parse(localStorage.getItem("users"));
+  const userItem = users[username]?.bag?.[category]?.[itemId] ?? 0;
+  let html;
 
+  if (!item) {
+    console.error("Missing Item:", itemId);
+    return
+  }
+  
+  html = `
+  <div class="amount">You have: <span>${userItem}</span></div>
+  <img draggable="false" class="img ${item.rarity}" src="${item.image}"/>
+  <div class="name">${item.name}</div>
+  <div class="description">${item.description}</div>
+  <div data-item-id="${itemId}" class="use-btn">Use</div>
+  `;
+  inner.innerHTML = html;
+  return;
+}
 // Render Bag
 function renderItems(username, category) {
   const users = JSON.parse(localStorage.getItem("users"));
   const user = users[username];
-  const userItems = user["item"];
+  const userItems = user["bag"][category];
   if (!userItems) {
     console.error("Missing category:", category);
     return ``;
@@ -115,3 +151,21 @@ document.addEventListener("mouseup", (e) => {
     return;
   }
 });
+document.addEventListener("click", (e) => {
+  const username = document
+    .querySelector(".user-information-window .information-container .username")
+    .textContent.toLowerCase();
+  const item = e.target.closest(".item");
+  if (!item) {
+    return;
+  }
+  const itemId = item.dataset.itemId;
+  renderItemInformation(username, itemId);
+  openItemInformation();
+});
+informationContainerOverlay.addEventListener("click", (e) => {
+  const classes = e.target.classList;
+  if ( classes == informationContainerOverlay.classList) {
+    closeItemInformation();
+  }
+})

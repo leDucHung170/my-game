@@ -3,8 +3,8 @@ const users = {
   panda: {
     level: 36,
     influence: 99999999,
-    vipLevel: 17,
-    vipProgress: 9999,
+    vipLevel: 8,
+    vipProgress: 12000,
     goldBlock: 36000,
     stamina: 90,
     guild: {
@@ -25,10 +25,9 @@ const users = {
       dragonEssence: 36000000000,
       dragonDust: 36000,
     },
-
-    item: {
-      "golden-chest": 1
-    },
+    bag: {
+      
+    }
   },
 };
 
@@ -70,8 +69,6 @@ function validate(name) {
   const uDD = user["resources"]["dragonDust"];
   const uLv = user["level"];
   const uInfluence = user["influence"];
-  const uVipLv = user["vipLevel"];
-  const uVipProgress = user["vipProgress"];
   const uGoldBLock = user["goldBlock"];
   const uStamina = user["stamina"];
   const uGName = user["guild"]["name"];
@@ -93,7 +90,6 @@ function validate(name) {
   const lv = document.querySelector(".btns .information .avatar .level");
   const influence = document.querySelector(".btns .information .power .text");
   const stamina = document.querySelector(".btns .information .stamina .text");
-  const vipLv = document.querySelector(".btns .information .vip .text span");
   const goldBlock = document.querySelector(
     ".btns .information .gold-block .text",
   );
@@ -128,7 +124,6 @@ function validate(name) {
   influence.textContent = calculatingNumber(uInfluence);
   console.log(calculatingNumber(uInfluence));
   stamina.textContent = uStamina;
-  vipLv.textContent = uVipLv;
   goldBlock.textContent = calculatingNumber(uGoldBLock);
   guildName.textContent = uGName;
   guildInfluence.textContent = calculatingNumber(uGInfluence);
@@ -140,7 +135,7 @@ validate("panda");
 document.addEventListener("keydown", (e) => {
   console.log(e.key);
   if (e.key == " ") {
-    validate("panda");
+    validateVip();
     return;
   }
   if (e.key == "b") {
